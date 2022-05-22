@@ -44,25 +44,25 @@ public class AdminController {
         stage.setScene(scene);
     }
 
-//    public void changeSceneCategory(ActionEvent e) throws IOException {
-//        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-//        stage.centerOnScreen();
-//        FXMLLoader loader = new FXMLLoader();
-//        loader.setLocation(getClass().getResource("../View/Admin.Category.fxml"));
-//        Parent CategoryViewParent = loader.load();
-//        Scene scene = new Scene(CategoryViewParent);
-//        stage.setScene(scene);
-//    }
+    public void changeSceneCategory(ActionEvent e) throws IOException {
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        stage.centerOnScreen();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../View/Admin.Category.fxml"));
+        Parent CategoryViewParent = loader.load();
+        Scene scene = new Scene(CategoryViewParent);
+        stage.setScene(scene);
+    }
 //
-//    public void changeSceneAccount(ActionEvent e) throws IOException {
-//        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-//        stage.centerOnScreen();
-//        FXMLLoader loader = new FXMLLoader();
-//        loader.setLocation(getClass().getResource("../View/Admin.Account.fxml"));
-//        Parent AccountViewParent = loader.load();
-//        Scene scene = new Scene(AccountViewParent);
-//        stage.setScene(scene);
-//    }
+    public void changeSceneAccount(ActionEvent e) throws IOException {
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        stage.centerOnScreen();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../View/Admin.Account.fxml"));
+        Parent AccountViewParent = loader.load();
+        Scene scene = new Scene(AccountViewParent);
+        stage.setScene(scene);
+    }
 //
 //    public void screenRevenueStatistic(ActionEvent event) throws IOException {
 //        FXMLLoader fxmlLoader = new FXMLLoader();
