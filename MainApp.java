@@ -1,6 +1,5 @@
 package Main;
 
-import Main.Admin.IngredientsManager.Controller.MasterController;
 import Main.Entity.Element.Employee;
 import Main.Helpers.MainControl.ControlBar;
 import Main.Sales.Sales.Control.SalesApplicationControl;

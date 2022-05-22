@@ -63,27 +63,27 @@ public class AdminController {
         Scene scene = new Scene(AccountViewParent);
         stage.setScene(scene);
     }
-//
-//    public void screenRevenueStatistic(ActionEvent event) throws IOException {
-//        FXMLLoader fxmlLoader = new FXMLLoader();
-//        fxmlLoader.setLocation(new File("Sales/ReportStatistic/View/RevenueStatistic.fxml").toURI().toURL());
-//        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//        stage.setScene(new Scene(fxmlLoader.load()));
-//        stage.getScene().getStylesheets().add(new File("Sales/ReportStatistic/View/CSS/RevenueStatistic.css")
-//                .toURI().toURL().toExternalForm());
-//        stage.show();
-//    }
-//
-//    public void changeSceneSalary(ActionEvent event) throws IOException {
-//        FXMLLoader fxmlLoader = new FXMLLoader();
-//        fxmlLoader.setLocation(new File("Admin/SalaryCalculate/View/Timekeeping.fxml").toURI().toURL());
-//        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//        stage.setScene(new Scene(fxmlLoader.load()));
-//        stage.getScene().getStylesheets().add(new File("Admin/SalaryCalculate/View/CSS/Salary.css")
-//                .toURI().toURL().toExternalForm());
-//        stage.show();
-//    }
-//
+
+    public void screenRevenueStatistic(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(new File("Sales/ReportStatistic/View/RevenueStatistic.fxml").toURI().toURL());
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(fxmlLoader.load()));
+        stage.getScene().getStylesheets().add(new File("Sales/ReportStatistic/View/CSS/RevenueStatistic.css")
+                .toURI().toURL().toExternalForm());
+        stage.show();
+    }
+
+    public void changeSceneSalary(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(new File("Admin/SalaryCalculate/View/Timekeeping.fxml").toURI().toURL());
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(fxmlLoader.load()));
+        stage.getScene().getStylesheets().add(new File("Admin/SalaryCalculate/View/CSS/Salary.css")
+                .toURI().toURL().toExternalForm());
+        stage.show();
+    }
+
 //    public void changeSceneWareHouse(ActionEvent event) throws IOException {
 //        FXMLLoader fxmlLoader = new FXMLLoader();
 //        fxmlLoader.setLocation(new File("Admin/IngredientsManager/View/IngredientOrder.fxml").toURI().toURL());

@@ -13,25 +13,16 @@
 
 <AnchorPane prefHeight="599.0" prefWidth="1090.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Admin.DataManager.Controller.AdminProductController">
    <children>
-      <TableView fx:id="productTableView" layoutX="69.0" layoutY="100.0" prefHeight="400.0" prefWidth="952.0" styleClass="table-view">
+      <TableView fx:id="productTableView" layoutX="90.0" layoutY="149.0" prefHeight="331.0" prefWidth="930.0" styleClass="table-view">
          <columns>
             <TableColumn fx:id="productIDTableColumn" prefWidth="62.0" text="ID" />
             <TableColumn fx:id="productNameTableColumn" prefWidth="293.0" text="ProductName" />
-            <TableColumn fx:id="CategoryNameTableColumn" prefWidth="204.0" text="Category" />
-            <TableColumn fx:id="productPriceTableColumn" prefWidth="205.0" text="Price" />
+            <TableColumn fx:id="CategoryNameTableColumn" prefWidth="227.0" text="Category" />
+            <TableColumn fx:id="productPriceTableColumn" prefWidth="182.0" text="Price" />
             <TableColumn fx:id="storageTableColumn" prefWidth="168.0" text="Storage" />
          </columns>
       </TableView>
       <Label fx:id="header" alignment="CENTER" layoutX="-3.0" layoutY="1.0" prefHeight="34.0" prefWidth="1090.0" text="Manage" />
-      <Button layoutX="376.0" layoutY="513.0" mnemonicParsing="false"  styleClass="button-admin">
-         <graphic>
-            <ImageView fitHeight="47.0" fitWidth="47.0" layoutX="-39.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true" styleClass="button-admin">
-               <image>
-                  <Image url="@../../../Icon/addproduct.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
       <Button layoutX="26.0" layoutY="527.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="48.0" prefWidth="43.0" styleClass="button-admin">
          <graphic>
             <ImageView fitHeight="38.0" fitWidth="76.0" layoutX="96.0" layoutY="441.0" pickOnBounds="true" preserveRatio="true">
@@ -41,7 +32,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="555.0" layoutY="513.0" mnemonicParsing="false"  styleClass="button-admin">
+      <Button layoutX="447.0" layoutY="513.0" mnemonicParsing="false" styleClass="button-admin">
          <graphic>
             <ImageView fitHeight="46.0" fitWidth="49.0" layoutX="-27.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" styleClass="button-admin">
                <image>
@@ -50,7 +41,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="724.0" layoutY="515.0" mnemonicParsing="false"  styleClass="button-admin">
+      <Button layoutX="644.0" layoutY="515.0" mnemonicParsing="false" styleClass="button-admin">
          <graphic>
             <ImageView fitHeight="46.0" fitWidth="42.0" layoutY="-17.0" pickOnBounds="true" preserveRatio="true" styleClass="button-admin">
                <image>
@@ -73,7 +64,14 @@
             </ImageView>
          </graphic>
       </Button>
-
+      <Button contentDisplay="TOP" layoutX="930.0" layoutY="48.0" mnemonicParsing="false" onAction="#changeSceneImportBill" prefHeight="85.0" prefWidth="74.0" styleClass="button-icon" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
+         <graphic>
+            <ImageView fitHeight="55.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Icon/import.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
    </children>
    <stylesheets>
       <URL value="@Css/AddApplication.css" />

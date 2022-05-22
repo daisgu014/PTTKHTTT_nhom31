@@ -47,7 +47,7 @@
          </graphic>
       </Button>
       <Label alignment="CENTER" layoutX="423.0" layoutY="54.0" prefHeight="30.0" prefWidth="66.0" styleClass="labelHello" text="Xin chào! " />
-      <Button contentDisplay="TOP" layoutX="209.0" layoutY="251.0" mnemonicParsing="false" prefHeight="123.0" prefWidth="101.0" styleClass="button-icon" text="Salary" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
+      <Button contentDisplay="TOP" layoutX="212.0" layoutY="266.0" mnemonicParsing="false" onAction="#changeSceneSalary" prefHeight="123.0" prefWidth="101.0" styleClass="button-icon" text="Salary" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
          <graphic>
             <ImageView fitHeight="82.0" fitWidth="102.0" layoutX="178.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -56,7 +56,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button contentDisplay="TOP" layoutX="356.0" layoutY="257.0" mnemonicParsing="false" prefHeight="123.0" prefWidth="101.0" styleClass="button-icon" text="Statistical" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
+      <Button contentDisplay="TOP" layoutX="354.0" layoutY="257.0" mnemonicParsing="false" onAction="#screenRevenueStatistic" prefHeight="123.0" prefWidth="101.0" styleClass="button-icon" text="Statistical" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
          <graphic>
             <ImageView fitHeight="82.0" fitWidth="102.0" layoutX="178.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -65,26 +65,8 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button contentDisplay="TOP" layoutX="63.0" layoutY="251.0" mnemonicParsing="false" prefHeight="123.0" prefWidth="101.0" styleClass="button-icon" text="Material" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
-         <graphic>
-            <ImageView fitHeight="82.0" fitWidth="102.0" layoutX="178.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Icon/nguyenlieu.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button contentDisplay="TOP" layoutX="516.0" layoutY="257.0" mnemonicParsing="false" prefHeight="123.0" prefWidth="101.0" styleClass="button-icon" text="Order" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
-         <graphic>
-            <ImageView fitHeight="82.0" fitWidth="102.0" layoutX="178.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Icon/order.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
       <Label fx:id="txtUserName" layoutX="500.0" layoutY="54.0" prefHeight="30.0" prefWidth="156.0" styleClass="labelUserName" text="UserName" />
-      
+
    </children>
    <stylesheets>
       <URL value="@Css/AdminApplication.css" />
