@@ -1,0 +1,55 @@
+.background{
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #ff006e, #0077b6);
+}
+.loginform{
+    -fx-background-color: #f0f0f0;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(three-pass-box, #1111,10,3,2,0);
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+}
+.loginicon{
+    -fx-effect: dropshadow(three-pass-box, #111,5,1,1,0);
+}
+.loginheader{
+    -fx-background-color: #5da9e9;
+    -fx-effect: dropshadow(three-pass-box, #111,10,0,0,0);
+    -fx-background-radius: 30;
+    -fx-padding: 5;
+    -fx-font-size: 20px;
+    -fx-font-weight: 700;
+    -fx-font-family: "Arial";
+    -fx-alignment: center;
+    -fx-text-fill: #fff;
+}
+.loginheader:hover{
+
+}
+.logintiltle{
+    -fx-text-fill:linear-gradient(from 25% 25% to 100% 100%, #ff9004, #7b2cbf) ;
+    -fx-font-size: 30px;
+    -fx-font-weight: 700;
+    -fx-font-family: "Arial";
+
+}
+.txtlogin{
+    -fx-background-radius: 20px;
+    -fx-text-fill:#9a8c98;
+    -fx-background-color:#e5e5e5;
+    -fx-padding: 0 0 0 30 ;
+}
+.txtlogin:hover{
+    -fx-border-color: #0cce6b;
+    -fx-border-radius: 20px;
+}
+.loginbutton{
+    -fx-background-color: #8fd23a;
+    -fx-background-radius: 30px;
+    -fx-font-size: 18Px;
+    -fx-effect: dropshadow(three-pass-box, #111,10,0,0,0);
+    -fx-font-weight: 800;
+    -fx-text-fill: #Fff;
+}
+.loginbutton:hover{
+    -fx-background-color: tomato;
+}

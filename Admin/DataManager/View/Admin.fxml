@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="449.0" prefWidth="671.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Admin.DataManager.Controller.AdminController">
+   <children>
+      <Label id="header" prefHeight="30.0" prefWidth="671.0" text="Coffe Manage" />
+       <Button contentDisplay="TOP" layoutX="63.0" layoutY="111.0" mnemonicParsing="false" onAction="#changeSceneEmployee" prefHeight="123.0" prefWidth="101.0" styleClass="button-icon" stylesheets="@Css/AdminApplication.css" text="Employee" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
+           <graphic>
+               <ImageView fitHeight="82.0" fitWidth="102.0" layoutX="178.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+                   <image>
+                       <Image url="@../../../Icon/user.png" />
+                   </image>
+               </ImageView>
+           </graphic>
+       </Button>
+      <Button contentDisplay="TOP" layoutX="209.0" layoutY="111.0" mnemonicParsing="false" onAction="#changeSceneProduct" prefHeight="123.0" prefWidth="110.0" styleClass="button-icon" text="Product" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
+         <graphic>
+            <ImageView fitHeight="82.0" fitWidth="102.0" layoutX="178.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Icon/products.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="buttonCategory" contentDisplay="TOP" layoutX="351.0" layoutY="111.0" mnemonicParsing="false" onAction="#changeSceneCategory" prefHeight="132.0" prefWidth="110.0" styleClass="button-icon" text="Category" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
+         <graphic>
+            <ImageView fitHeight="82.0" fitWidth="102.0" layoutX="178.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Icon/category.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button contentDisplay="TOP" layoutX="511.0" layoutY="111.0" mnemonicParsing="false" onAction="#changeSceneAccount" prefHeight="123.0" prefWidth="110.0" styleClass="button-icon" text="Account" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
+         <graphic>
+            <ImageView fitHeight="82.0" fitWidth="102.0" layoutX="178.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Icon/account.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label alignment="CENTER" layoutX="423.0" layoutY="54.0" prefHeight="30.0" prefWidth="66.0" styleClass="labelHello" text="Xin chào! " />
+      <Button contentDisplay="TOP" layoutX="209.0" layoutY="251.0" mnemonicParsing="false" onAction="#changeSceneSalary" prefHeight="123.0" prefWidth="101.0" styleClass="button-icon" text="Salary" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
+         <graphic>
+            <ImageView fitHeight="82.0" fitWidth="102.0" layoutX="178.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Icon/salary.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button contentDisplay="TOP" layoutX="356.0" layoutY="257.0" mnemonicParsing="false" onAction="#screenRevenueStatistic" prefHeight="123.0" prefWidth="101.0" styleClass="button-icon" text="Statistical" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
+         <graphic>
+            <ImageView fitHeight="82.0" fitWidth="102.0" layoutX="178.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Icon/thongke.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button contentDisplay="TOP" layoutX="63.0" layoutY="251.0" mnemonicParsing="false" onAction="#changeSceneWareHouse" prefHeight="123.0" prefWidth="101.0" styleClass="button-icon" text="Material" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
+         <graphic>
+            <ImageView fitHeight="82.0" fitWidth="102.0" layoutX="178.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Icon/nguyenlieu.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button contentDisplay="TOP" layoutX="516.0" layoutY="257.0" mnemonicParsing="false" prefHeight="123.0" prefWidth="101.0" styleClass="button-icon" text="Order" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
+         <graphic>
+            <ImageView fitHeight="82.0" fitWidth="102.0" layoutX="178.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Icon/order.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label fx:id="txtUserName" layoutX="500.0" layoutY="54.0" prefHeight="30.0" prefWidth="156.0" styleClass="labelUserName" text="UserName" />
+      
+   </children>
+   <stylesheets>
+      <URL value="@Css/AdminApplication.css" />
+      <URL value="@Css/AddApplication.css" />
+      <URL value="@Css/Application.css" />
+   </stylesheets>
+</AnchorPane>

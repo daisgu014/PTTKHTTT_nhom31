@@ -1,0 +1,81 @@
+.btn{
+    -fx-font-weight: 900;
+    -fx-background-color: linear-gradient(to right, #7474bf, #348ac7);
+    -fx-padding: 4px 8px;
+    -fx-text-fill: #ff0000;
+    -fx-border: solid;
+    -fx-background-radius: 6px;
+    -fx-effect: dropshadow(three-pass-box, #fff,5,0,4,2);
+}
+
+.btn-confirm:hover{
+    -fx-effect: dropshadow(three-pass-box, #5F50F1,10,0,0,0);
+}
+
+.title-form{
+    -fx-alignment: center;
+    -fx-font-weight: 900;
+    -fx-background-color: #FFF;
+    -fx-font-size: 14;
+    -fx-padding: 4px 8px;
+    -fx-text-fill: #ff0000;
+    -fx-border: solid;
+    -fx-background-radius: 12px;
+}
+.btn-confirm {
+    -fx-font-weight: 900;
+    -fx-background-color: linear-gradient(to right, #7474bf, #348ac7);
+    -fx-padding: 4px 8px;
+    -fx-text-fill: #fff;
+    -fx-border: solid;
+    -fx-background-radius: 6px;
+    -fx-effect: dropshadow(three-pass-box, #fff,5,0,4,2);
+}
+
+.dialog-pane .button{
+    -fx-font-weight: 900;
+    -fx-background-color: linear-gradient(to right, #7474bf, #348ac7);
+    -fx-padding: 4px 8px;
+    -fx-text-fill: #fff;
+    -fx-border: solid;
+    -fx-background-radius: 6px;
+    -fx-effect: dropshadow(three-pass-box, #000000,5,0,4,2);
+}
+
+.dialog-pane .button:hover{
+    -fx-effect: dropshadow(three-pass-box, #ffffff,10,0,0,0);
+}
+
+
+.dialog-pane .content{
+    -fx-font-size: 15;
+    -fx-text-fill: #fff;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #fff;
+    -fx-background-radius: 10px;
+    -fx-text-fill: red;
+}
+
+.dialog-pane .header-panel .label{
+    -fx-alignment: center;
+    -fx-font-size: 20;
+    -fx-font-weight: 700;
+    -fx-font-family: Arial;
+    -fx-text-fill: red;
+}
+
+
+.dialog-pane{
+    -fx-padding: 5,0,0,0;
+    -fx-border-color: white;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+.root{
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #ff006e, #0077b6);
+    -fx-background-radius: 10;
+}
+

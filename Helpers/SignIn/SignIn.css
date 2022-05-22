@@ -1,0 +1,47 @@
+#header{
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+    -fx-background-color: #5F50F1;
+    -fx-text-fill: #fff;
+    -fx-font-size: 17;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, #48cae4,3,1,1,0);
+    -fx-font-family: Arial;
+}
+.btn-confirm:hover{
+    -fx-effect: dropshadow(three-pass-box, #ffffff,10,0,0,0);
+}
+
+.title-form{
+    -fx-font-weight: 900;
+    -fx-background-color: linear-gradient(to right, #7474bf, #fafafc);
+    -fx-font-size: 15;
+    -fx-padding: 4px 8px;
+    -fx-text-fill: #fff;
+    -fx-border: solid;
+    -fx-background-radius: 12px;
+}
+.btn-confirm {
+    -fx-font-weight: 900;
+    -fx-background-color: linear-gradient(to right, #7474bf, #348ac7);
+    -fx-padding: 4px 8px;
+    -fx-text-fill: #fff;
+    -fx-border: solid;
+    -fx-background-radius: 6px;
+    -fx-effect: dropshadow(three-pass-box, #000000,5,0,4,2);
+}
+
+
+.txt-field-input {
+    -fx-background-radius: 12px;
+    -fx-background-color: #fff;
+    -fx-text-fill: #348ac7;
+    -fx-font-weight: 700;
+    -fx-font-size: 13;
+    -fx-border-color: #fff;
+    -fx-border-radius: 12px;
+}
+.root{
+    -fx-background-color: linear-gradient(from 25px 25px to 100px 100px, #ff006e, #4a4e69);
+}
+

@@ -1,0 +1,91 @@
+.button{
+    -fx-alignment: center;
+    -fx-background-color: #5F50F1;
+    -fx-text-fill: #fff;
+    -fx-background-radius: 10;
+    -fx-font-size: 14;
+    -fx-font-weight: 700;
+    -fx-effect: dropshadow(three-pass-box, #111,5,0,4,2);
+}
+
+#cashbtn{
+    -fx-alignment: center;
+    -fx-pref-width: 500;
+    -fx-background-color: #5F50F1;
+    -fx-text-fill: #fff;
+    -fx-background-radius: 10;
+    -fx-font-size: 14;
+    -fx-font-weight: 700;
+    -fx-effect: dropshadow(three-pass-box, #111,5,0,4,2);
+}
+
+#pricelbl{
+    -fx-alignment: center;
+    -fx-pref-height: 30;
+    -fx-pref-width: 500;
+    -fx-background-color: #fff;
+    -fx-text-fill: #5F50F1;
+    -fx-background-radius: 10;
+    -fx-font-size: 14;
+    -fx-font-weight: 700;
+    -fx-effect: dropshadow(three-pass-box, #111,5,0,4,2);
+}
+
+#menu-drink-text{
+    -fx-alignment: center;
+    -fx-background-radius: 10;
+    -fx-background-color: linear-gradient(from 25px 25px to 100px 100px, #cfbaf0, #b9fbc0);
+    -fx-text-fill: #fff;
+    -fx-font-size: 16;
+    -fx-font-weight: 700;
+    -fx-effect: dropshadow(three-pass-box, #48cae4,5,0,1,0);
+}
+
+
+.table-view .column-header,
+.table-view .column-header .filler,
+.table-view .column-header-background .filler {
+    -fx-background-color: #5F50F1;
+    -fx-text-fill: #fff;
+    -fx-alignment: center;
+    -fx-font-weight: 800;
+}
+.label{
+    -fx-text-fill: #fff;
+    -fx-font-weight: 800;
+    -fx-effect: dropshadow(three-pass-box, #111,5,0,4,2);
+}
+
+.text-field{
+    -fx-alignment: center;
+    -fx-background-color: #FFF;
+    -fx-text-fill: #5F50F1;
+    -fx-background-radius: 10;
+    -fx-pref-width: 300;
+    -fx-font-size: 14;
+    -fx-font-weight: 700;
+    -fx-effect: dropshadow(three-pass-box, #111,5,0,4,2);
+}
+
+#searchIcon{
+    -fx-effect: dropshadow(three-pass-box, #111,5,0,4,2);
+}
+
+.toggle-button{
+    -fx-pref-width: 100;
+    -fx-max-width: 200;
+    -fx-alignment: center;
+    -fx-background-radius: 10px;
+    -fx-background-color: #fff;
+    -fx-text-fill: #5F50F1;
+    -fx-border-radius: 10px;
+    -fx-font-weight: 700;
+    -fx-effect: dropshadow(three-pass-box, #111,5,0,4,2);
+    -fx-padding: 5,0,0,0;
+}
+.toggle-button:selected{
+    -fx-background-color: #5F50F1;
+
+    -fx-text-fill: #fff;
+}
+

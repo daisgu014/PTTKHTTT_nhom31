@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<DialogPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="480.0" styleClass="dialog" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Admin.DataManager.Controller.AdminAccountEditController">
+    <header>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="480.0" stylesheets="@Css/AddApplication.css">
+            <children>
+                <Label layoutX="43.0" layoutY="48.0" prefHeight="47.0" prefWidth="127.0" styleClass="LabelTilte" text="OwnerID">
+
+                </Label>
+                <Label prefHeight="24.0" prefWidth="480.0" styleClass="header" text="Edit" />
+                <Label layoutX="45.0" layoutY="108.0" prefHeight="46.0" prefWidth="123.0" styleClass="LabelTilte" text="Name">
+
+                </Label>
+                <Label layoutX="45.0" layoutY="167.0" prefHeight="46.0" prefWidth="123.0" styleClass="LabelTilte" text="UserName">
+
+                </Label>
+                <Label layoutX="45.0" layoutY="224.0" prefHeight="46.0" prefWidth="123.0" styleClass="LabelTilte" text="Password">
+
+                </Label>
+                <TextField fx:id="txtUserName" layoutX="212.0" layoutY="171.0" prefHeight="38.0" prefWidth="198.0" promptText="Enter UserName" styleClass="TextFieldInput" />
+                <Label fx:id="txtName" layoutX="211.0" layoutY="113.0" prefHeight="36.0" prefWidth="200.0" styleClass="LabelTilte" text="Label" />
+                <Label layoutX="47.0" layoutY="282.0" prefHeight="46.0" prefWidth="150.0" styleClass="LabelTilte" text="Confirm Passwrd">
+                    <font>
+                        <Font size="10.0" />
+                    </font>
+                </Label>
+            <Label fx:id="txtEmployeeId" layoutX="211.0" layoutY="54.0" prefHeight="36.0" prefWidth="200.0" styleClass="LabelTilte" text="Label" />
+            <PasswordField fx:id="txtPassword" layoutX="215.0" layoutY="225.0" prefHeight="45.0" prefWidth="196.0" promptText="Enter Password" styleClass="TextFieldInput" />
+            <PasswordField fx:id="txtPasswordAgain" layoutX="215.0" layoutY="283.0" prefHeight="45.0" prefWidth="196.0" promptText="Enter Password Again" styleClass="TextFieldInput" />
+            </children></AnchorPane>
+    </header>
+    <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0" />
+    </content>
+    <expandableContent>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0" />
+    </expandableContent>
+    <buttonTypes>
+        <ButtonType fx:constant="APPLY" />
+      <ButtonType fx:constant="CLOSE" />
+    </buttonTypes>
+    <stylesheets>
+        <URL value="@Css/AddApplication.css" />
+        <URL value="@Css/AdminApplication.css" />
+    </stylesheets>
+</DialogPane>

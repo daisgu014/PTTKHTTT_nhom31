@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import java.net.URL?>
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<DialogPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="500" styleClass="dialog" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Admin.SalaryCalculate.Controller.AddEmployyee">
+    <header>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="362.0" prefWidth="500.0" stylesheets="">
+            <children>
+                <Label alignment="CENTER" prefHeight="24.0" prefWidth="500.0" styleClass="header" text="Add Employee" />
+                <Label layoutX="63.0" layoutY="44.0" prefHeight="47.0" prefWidth="107.0" styleClass="LabelTilte" text="Name:" />
+                <TextField fx:id="textEmpName" layoutX="168.0" layoutY="48.0" prefHeight="39.0" prefWidth="227.0" promptText="Enter Name" styleClass="TextFieldInput" />
+                <Label layoutX="63.0" layoutY="105.0" prefHeight="46.0" prefWidth="104.0" styleClass="LabelTilte" text="Number Phone:" />
+                <TextField fx:id="textEmpPhone" layoutX="168.0" layoutY="109.0" prefHeight="39.0" prefWidth="227.0" promptText="Enter Number Phone" styleClass="TextFieldInput" />
+                <ComboBox fx:id="positionList" layoutX="170.0" layoutY="179.0" prefHeight="36.0" prefWidth="195.0" promptText="Select Type" styleClass="TextFieldInput" />
+                <ComboBox fx:id="typeList" layoutX="170.0" layoutY="247.0" prefHeight="36.0" prefWidth="195.0" promptText="Select Position" styleClass="TextFieldInput" />
+                <Label layoutX="60.0" layoutY="179.0" prefHeight="46.0" prefWidth="96.0" styleClass="LabelTilte" text="Type:" />
+                <Label layoutX="60.0" layoutY="242.0" prefHeight="46.0" prefWidth="96.0" styleClass="LabelTilte" text="Position:" />
+            </children>
+        </AnchorPane>
+    </header>
+    <buttonTypes>
+        <ButtonType fx:constant="APPLY"  />
+    </buttonTypes>
+    <buttonTypes>
+        <ButtonType fx:constant="CANCEL" />
+    </buttonTypes>
+    <stylesheets>
+        <URL value="@CSS/Salary.css" />
+    </stylesheets>
+</DialogPane>

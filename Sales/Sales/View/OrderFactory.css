@@ -1,0 +1,56 @@
+.label{
+    -fx-border-color: #5F50F1;
+    -fx-border-radius: 5;
+    -fx-text-fill: #5F50F1;
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-font-weight: 700;
+    -fx-font-size: 14;
+    -fx-pref-width: 140;
+    -fx-padding: 5,0,0,0;
+    -fx-effect: dropshadow(three-pass-box, #5F50F1,5,0,1,0);
+}
+.combo-box .list-cell:filled:selected{
+    -fx-background-color: #5F50F1;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+}
+.combo-box{
+    -fx-padding: 4,0,0,0;
+    -fx-background-color: #5F50F1;
+}
+
+
+#cont{
+    -fx-background-color: white;
+    -fx-pref-width: 150;
+}
+.root{
+    -fx-pref-width: 300;
+}
+
+.button{
+    -fx-background-color: White;
+    -fx-text-fill: rgba(150, 79, 26, 0.96);
+    -fx-padding: 1,0,0,0;
+    -fx-border-radius: 10;
+    -fx-font-weight: 700;
+    -fx-font-size: 14;
+}
+
+#control{
+    -fx-alignment: center;
+    -fx-background-color: #5F50F1;
+    -fx-pref-height: 50;
+}
+.text-field{
+    -fx-background-color: White;
+    -fx-text-fill: #5F50F1;
+    -fx-padding: 3,0,0,0;
+    -fx-border-radius: 10;
+    -fx-font-weight: 700;
+}
+
+#maincont{
+    -fx-padding: 5,0,0,0;
+}

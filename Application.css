@@ -1,0 +1,22 @@
+#root{
+    -fx-font-family: "Segoe UI Black";
+}
+#header{
+    -fx-font-size: 16px;
+    -fx-background-color: #1E212D;
+    -fx-alignment: center;
+    -fx-text-fill: #FFFCFC;
+}
+#namelable{
+    -fx-background-color: #1E212D;
+    -fx-text-fill: #FFFCFC;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.5), 10, 0.4, 3, 3);
+    -fx-arc-width: 50px;
+}
+#numLabel{
+    -fx-border-color:#1E212D;
+    -fx-text-fill: #FFFCFC;
+    -fx-alignment: center;
+    -fx-border-radius: 10px;
+}

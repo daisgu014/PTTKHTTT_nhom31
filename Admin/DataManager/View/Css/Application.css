@@ -1,0 +1,94 @@
+#header{
+   -fx-background-color: #5F50F1;
+    -fx-text-fill: #fff;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-weight: Bold;
+    -fx-font-size: 18px;
+}
+.button-admin{
+    -fx-background-color: transparent;
+
+}
+.button-admin:hover{
+    -fx-effect: dropshadow(three-pass-box, #5F50F1,10,0,0,0);
+}
+.table-view{
+    -fx-effect: dropshadow(three-pass-box, #111,10,0,0,0);
+}
+.table-view .column-header, .table-view .filler{
+    -fx-size: 45;
+    -fx-background-color: #5F50F1;
+    -fx-alignment: center;
+}
+.table-view .column-header .label{
+    -fx-text-fill: #fff;
+    -fx-text-alignment: center;
+}
+.LabelTitleDelete{
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-text-fill: tomato;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+.LabelTitleDelete2{
+    -fx-font-size: 16;
+    -fx-alignment: center;
+    -fx-text-fill: grey;
+}
+
+#dialogDelete .button{
+    -fx-alignment: center;
+    -fx-background-radius: 10px;
+    -fx-background-color: #fca311;
+    -fx-text-fill: #fff;
+    -fx-font-weight: 600;
+    -fx-effect: dropshadow(three-pass-box, #111,5,0,4,2);
+}
+#dialogDelete .button:hover{
+    -fx-background-color: tomato;
+}
+.labeltitlePrice{
+    -fx-text-fill: #fff;
+    -fx-font-size: 25px;
+    -fx-font-weight: 800;
+    -fx-highlight-text-fill: red;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-background-color: transparent;
+    -fx-effect: dropshadow(three-pass-box, #48cae4,3,1,1,0);
+    -fx-border-color:#48cae4 ;
+    -fx-border-radius: 15;
+}
+.pricewithsize{
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-background-color: #023e8a;
+    -fx-background-radius: 15;
+    -fx-text-fill: #fff;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(three-pass-box, #48cae4,3,1,1,0);
+}
+.alert{
+    -fx-font-size: 16px;
+
+}
+.alert .label{
+    -fx-text-fill: #c81d25;
+    -fx-font-size: 20px;
+    -fx-font-weight: 700;
+}
+.alert .image{
+    -fx-effect: dropshadow(three-pass-box, #ba181b,15,0.5,-2,2);
+}
+.alert .button{
+    -fx-background-color: #ffbe0b;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(three-pass-box, #8d99ae,10,0,1,0);
+    -fx-text-fill: #ffff;
+    -fx-font-weight: 700;
+    -fx-font-size: 18px;
+}
+.alert .button:hover{
+    -fx-background-color: tomato;
+}

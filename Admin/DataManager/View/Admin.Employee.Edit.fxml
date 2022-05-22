@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<DialogPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="348.0" prefWidth="480.0" styleClass="dialog" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Admin.DataManager.Controller.AdminEmployeeEditController">
+   <header>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="308.0" prefWidth="480.0" stylesheets="@Css/AddApplication.css">
+         <children>
+            <Label layoutX="43.0" layoutY="48.0" prefHeight="47.0" prefWidth="127.0" styleClass="LabelTilte" text="Name">
+
+            </Label>
+            <Label prefHeight="24.0" prefWidth="480.0" styleClass="header" text="Edit" />
+            <Label layoutX="45.0" layoutY="108.0" prefHeight="46.0" prefWidth="123.0" styleClass="LabelTilte" text="Phone">
+
+            </Label>
+            <Label layoutX="45.0" layoutY="167.0" prefHeight="46.0" prefWidth="123.0" styleClass="LabelTilte" text="Position">
+
+            </Label>
+            <Label layoutX="45.0" layoutY="224.0" prefHeight="46.0" prefWidth="123.0" styleClass="LabelTilte" text="WorkType">
+
+            </Label>
+            <TextField fx:id="textNameEmployee" layoutX="212.0" layoutY="48.0" prefHeight="38.0" prefWidth="198.0" styleClass="TextFieldInput" />
+            <TextField fx:id="textPhone" layoutX="212.0" layoutY="108.0" prefHeight="38.0" prefWidth="198.0" styleClass="TextFieldInput" />
+            <ComboBox fx:id="textPosition" layoutX="212.0" layoutY="167.0" prefHeight="43.0" prefWidth="198.0" promptText="Select Position" styleClass="TextFieldInput" />
+            <ComboBox fx:id="textType" layoutX="213.0" layoutY="225.0" prefHeight="44.0" prefWidth="197.0" promptText="Select WorkType" styleClass="TextFieldInput" />
+         </children></AnchorPane>
+   </header>
+   <content>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0" />
+   </content>
+   <expandableContent>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0" />
+   </expandableContent>
+   <buttonTypes>
+      <ButtonType fx:constant="APPLY" />
+      <ButtonType fx:constant="CLOSE" />
+   </buttonTypes>
+   <stylesheets>
+      <URL value="@Css/AddApplication.css" />
+      <URL value="@Css/AdminApplication.css" />
+   </stylesheets>
+</DialogPane>

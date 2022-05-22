@@ -1,0 +1,69 @@
+
+.menu{
+    -fx-background-color: #97e1ea;
+    -fx-effect: dropshadow(three-pass-box, #035980,5,0,4,2);
+}
+.button{
+    -fx-pref-width: 100;
+    -fx-alignment: center;
+    -fx-background-radius: 10px;
+    -fx-background-color: tomato;
+    -fx-text-fill: #fff;
+    -fx-font-weight: 700;
+    -fx-effect: dropshadow(three-pass-box, #111,5,0,4,2);
+    -fx-padding: 5,0,0,0;
+}
+.tooltip{
+    -fx-background-color: #fff;
+    -fx-font-size: 15;
+    -fx-font-weight: 700;
+    -fx-font-family: Candara;
+    -fx-text-fill: #5F50F1;
+}
+.tooltip .label{
+    -fx-fill-width: true;
+    -fx-text-fill: #fff;
+}
+
+.toggle-button{
+     -fx-pref-width: 200;
+     -fx-max-width: 200;
+     -fx-alignment: center;
+     -fx-background-radius: 10px;
+     -fx-background-color: #fff;
+     -fx-text-fill: #5F50F1;
+     -fx-border-radius: 10px;
+     -fx-font-weight: 700;
+     -fx-effect: dropshadow(three-pass-box, #111,5,0,4,2);
+     -fx-padding: 5,0,0,0;
+ }
+.toggle-button:selected{
+    -fx-background-color: #5F50F1;
+
+    -fx-text-fill: #fff;
+}
+
+.menu-item{
+    -fx-background-color: #035980;
+}
+
+.menu-item:cell-selection{
+    -fx-background-color: tomato;
+}
+
+#mainMenu{
+    -fx-pref-width: 35;
+    -fx-background-color: #035980;
+}
+
+.root{
+    -fx-background-color: #fff;
+    -fx-spacing: 5;
+    -fx-pref-width: 100;
+    -fx-min-width: 30;
+    -fx-max-width: 250;
+    -fx-hgap: 5;
+    -fx-padding: 5,0,0,0;
+}
+
+

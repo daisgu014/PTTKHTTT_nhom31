@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1036.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Sales.ReportStatistic.Control.ProductStatistic">
+   <items>
+      <AnchorPane fx:id="secondPane" minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="799.0">
+         <children>
+            <Label layoutX="23.0" layoutY="38.0" prefHeight="16.0" prefWidth="129.0" text="NGÀY BẮT ĐẦU" />
+            <Label layoutX="23.0" layoutY="72.0" prefHeight="16.0" prefWidth="129.0" text="NGÀY KẾT THÚC" />
+            <Button fx:id="btnProduct" layoutX="414.0" layoutY="117.0" mnemonicParsing="false" onAction="#screenProductStatistic" prefHeight="24.0" prefWidth="177.0" text="SẢN PHẨM" />
+            <Button fx:id="btnCategory" layoutX="626.0" layoutY="117.0" mnemonicParsing="false" onAction="#screenCategoryStatistic" prefHeight="24.0" prefWidth="177.0" text="THEO LOẠI" />
+            <Button fx:id="btnRevenue" layoutX="204.0" layoutY="117.0" mnemonicParsing="false" onAction="#screenRevenueStatistic" prefHeight="24.0" prefWidth="177.0" text="DOANH THU" />
+            <TableView fx:id="tableProduct" layoutX="52.0" layoutY="168.0" prefHeight="401.0" prefWidth="935.0">
+               <columns>
+                  <TableColumn fx:id="idProduct" prefWidth="128.0" text="MÃ SẢN PHẨM" />
+                  <TableColumn fx:id="nameProduct" prefWidth="292.0" text="TÊN SẢN PHẨM" />
+                  <TableColumn fx:id="catProduct" minWidth="0.0" prefWidth="187.0" text="LOẠI SẢN PHẨM" />
+                  <TableColumn fx:id="priceProduct" prefWidth="190.0" text="GIÁ TIỀN" />
+                  <TableColumn fx:id="qtyProduct" prefWidth="137.0" text="SỐ LƯỢNG" />
+               </columns>
+            </TableView>
+            <DatePicker fx:id="startDate" layoutX="161.0" layoutY="34.0" />
+            <DatePicker fx:id="endDate" layoutX="161.0" layoutY="68.0" />
+            <Button fx:id="btnOk" layoutX="388.0" layoutY="34.0" mnemonicParsing="false" onAction="#checkDate" prefHeight="24.0" prefWidth="105.0" text="OK" />
+            <Button fx:id="btnClear" layoutX="503.0" layoutY="34.0" mnemonicParsing="false" onAction="#clearDate" prefHeight="24.0" prefWidth="105.0" text="CLEAR" />
+         </children>
+      </AnchorPane>
+   </items>
+</SplitPane>
