@@ -13,18 +13,17 @@
 
 <AnchorPane prefHeight="599.0" prefWidth="1090.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Admin.DataManager.Controller.AdminProductController">
    <children>
-      <TableView fx:id="productTableView" layoutX="14.0" layoutY="106.0" prefHeight="400.0" prefWidth="1057.0" styleClass="table-view">
+      <TableView fx:id="productTableView" layoutX="69.0" layoutY="100.0" prefHeight="400.0" prefWidth="952.0" styleClass="table-view">
          <columns>
             <TableColumn fx:id="productIDTableColumn" prefWidth="62.0" text="ID" />
             <TableColumn fx:id="productNameTableColumn" prefWidth="293.0" text="ProductName" />
-            <TableColumn fx:id="CategoryNameTableColumn" prefWidth="264.0" text="Category" />
-            <TableColumn fx:id="productPriceBySTableColumn" prefWidth="171.0" text="Size S" />
-            <TableColumn fx:id="productPriceByMTableColumn" prefWidth="142.0" text="Size M" />
-            <TableColumn fx:id="productPriceByLTableColumn" prefWidth="124.0" text="Size L" />
+            <TableColumn fx:id="CategoryNameTableColumn" prefWidth="204.0" text="Category" />
+            <TableColumn fx:id="productPriceTableColumn" prefWidth="205.0" text="Price" />
+            <TableColumn fx:id="storageTableColumn" prefWidth="168.0" text="Storage" />
          </columns>
       </TableView>
       <Label fx:id="header" alignment="CENTER" layoutX="-3.0" layoutY="1.0" prefHeight="34.0" prefWidth="1090.0" text="Manage" />
-      <Button layoutX="376.0" layoutY="513.0" mnemonicParsing="false" onAction="#changeSceneAddEvent" styleClass="button-admin">
+      <Button layoutX="376.0" layoutY="513.0" mnemonicParsing="false"  styleClass="button-admin">
          <graphic>
             <ImageView fitHeight="47.0" fitWidth="47.0" layoutX="-39.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true" styleClass="button-admin">
                <image>
@@ -42,7 +41,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="555.0" layoutY="513.0" mnemonicParsing="false" onAction="#changeSceneEditEvent" styleClass="button-admin">
+      <Button layoutX="555.0" layoutY="513.0" mnemonicParsing="false"  styleClass="button-admin">
          <graphic>
             <ImageView fitHeight="46.0" fitWidth="49.0" layoutX="-27.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" styleClass="button-admin">
                <image>
@@ -51,7 +50,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="724.0" layoutY="515.0" mnemonicParsing="false" onAction="#changeSceneDeleteEvent" styleClass="button-admin">
+      <Button layoutX="724.0" layoutY="515.0" mnemonicParsing="false"  styleClass="button-admin">
          <graphic>
             <ImageView fitHeight="46.0" fitWidth="42.0" layoutY="-17.0" pickOnBounds="true" preserveRatio="true" styleClass="button-admin">
                <image>

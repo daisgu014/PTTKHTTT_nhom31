@@ -1,6 +1,5 @@
 package Main.Admin.DataManager.Controller;
 import Main.Admin.DataManager.Model.AccountInTable;
-import Main.Admin.DataManager.Model.ProductInTable;
 import Main.Entity.DataAccess.DAO;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ChangeListener;

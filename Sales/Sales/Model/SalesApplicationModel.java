@@ -1,12 +1,10 @@
 package Main.Sales.Sales.Model;
 
 import Main.Admin.DataManager.Controller.AdminProductController;
-import Main.Admin.DataManager.Model.ProductInTable;
 import Main.Entity.DataAccess.DAO;
 import Main.Entity.Element.Order;
 import Main.Entity.Element.OrderDetail;
 import Main.Entity.Element.Product;
-import Main.Entity.Element.ProductPrice;
 import Main.MainApp;
 
 import java.sql.PreparedStatement;
@@ -66,17 +64,8 @@ public class SalesApplicationModel {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        for(ProductInTable p : AdminProductController.productInTableList){
-            Product tmp = new Product(p.getProductID(), p.getProductName(), p.getCategoryName());
-            if(p.getPriceByS()!=0){
-                tmp.getPriceList().add(new ProductPrice(tmp.getProductId(), "S",p.getPriceByS()));
-            }
-            if(p.getPriceByM()!=0){
-                tmp.getPriceList().add(new ProductPrice(tmp.getProductId(), "M",p.getPriceByM()));
-            }
-            if(p.getPriceByL()!=0){
-                tmp.getPriceList().add(new ProductPrice(tmp.getProductId(), "L",p.getPriceByL()));
-            }
+        for(Product p : AdminProductController.productInTableList){
+            Product tmp = new Product(p.getProductId(), p.getProductName(), p.getCategoryName(),p.getProductPrice(),p.getStorage());
             productList.add(tmp);
         }
     }
@@ -158,5 +147,6 @@ public class SalesApplicationModel {
         }
         currentOrders.setTotalPrice(totalPrice);
     }
+
 
 }

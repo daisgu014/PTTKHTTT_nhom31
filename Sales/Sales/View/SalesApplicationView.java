@@ -140,15 +140,15 @@ public class SalesApplicationView{
             menu.getColumnConstraints().add(column);
             //menu.setBackground(null);
         }
-        try {
-            Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-            Image img = new Image(new FileInputStream("Icon/background.jpg"));
-            menu.setBackground(new Background(new BackgroundImage(
-                    img,null,null,null,
-                    new BackgroundSize(d.getWidth()-350,d.getHeight(),false,false,false,false))));
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+//            Image img = new Image(new FileInputStream("Icon/background.jpg"));
+//            menu.setBackground(new Background(new BackgroundImage(
+//                    img,null,null,null,
+//                    new BackgroundSize(d.getWidth()-350,d.getHeight(),false,false,false,false))));
+//        } catch (FileNotFoundException e) {
+//            throw new RuntimeException(e);
+//        }
         srcViewMenu.setContent(menu);
     }
 

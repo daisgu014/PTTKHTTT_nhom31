@@ -1,6 +1,5 @@
 package Main.Admin.DataManager.Controller;
 
-import Main.Admin.DataManager.Model.ProductInTable;
 import Main.Entity.DataAccess.DAO;
 import Main.Entity.Element.Category;
 import javafx.fxml.FXML;
