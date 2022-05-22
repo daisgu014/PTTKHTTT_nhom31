@@ -183,6 +183,15 @@ public class AdminProductController implements Initializable {
         Scene scene = new Scene(AdminViewParent);
         stage.setScene(scene);
     }
+    public void changeSceneImportBill(ActionEvent e) throws IOException {
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        stage.centerOnScreen();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../View/Admin.ImportBill.fxml"));
+        Parent ImportBillView = loader.load();
+        Scene scene = new Scene(ImportBillView);
+        stage.setScene(scene);
+    }
 
 
 }

@@ -1,7 +1,6 @@
 package Main.Helpers.SignIn;
 
 import Main.Admin.DataManager.Controller.AdminEmployeeController;
-import Main.Admin.IngredientsManager.Controller.MasterController;
 import Main.Entity.DataAccess.DAO;
 import Main.Entity.Element.Employee;
 import Main.MainApp;
@@ -77,7 +76,6 @@ public class SigninController {
                     a.show();
                     break;
                 default:
-                    MasterController.start();
                     MainApp.controlBar.initGUI();
                     MainApp.controlBar.getDataControl().setTxtUserName(MainApp.staff.getEmployeeName());
                     MainApp.controlBar.showFunction(flag);
