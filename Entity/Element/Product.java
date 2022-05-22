@@ -7,25 +7,28 @@ public class Product {
     private String productId;
     private String productName;
     private String categoryName;
+    private int productPrice;
+    private int storage;
+    private String SupplierName;
 
-    private ArrayList<ProductPrice> priceList;
+    public Product(String productId, String productName, String categoryName, int productPrice, int storage) {
+        this.productId = productId;
+        this.productName = productName;
+        this.categoryName = categoryName;
+        this.productPrice = productPrice;
+        this.storage = storage;
+    }
+
+    public Product(String productId, String productName, String categoryName, int productPrice, int storage, String supplierName) {
+        this.productId = productId;
+        this.productName = productName;
+        this.categoryName = categoryName;
+        this.productPrice = productPrice;
+        this.storage = storage;
+        SupplierName = supplierName;
+    }
 
     public Product() {
-        priceList = new ArrayList<>();
-    }
-
-    public Product(String productId, String productName, String categoryName) {
-        this.productId = productId;
-        this.productName = productName;
-        this.categoryName = categoryName;
-        this.priceList = new ArrayList<>();
-    }
-
-    public Product(String productId, String productName, String categoryName, ArrayList<ProductPrice> priceList) {
-        this.productId = productId;
-        this.productName = productName;
-        this.categoryName = categoryName;
-        this.priceList = priceList;
     }
 
     public String getProductId() {
@@ -52,11 +55,27 @@ public class Product {
         this.categoryName = categoryName;
     }
 
-    public ArrayList<ProductPrice> getPriceList() {
-        return priceList;
+    public int getProductPrice() {
+        return productPrice;
     }
 
-    public void setPriceList(ArrayList<ProductPrice> priceList) {
-        this.priceList = priceList;
+    public void setProductPrice(int productPrice) {
+        this.productPrice = productPrice;
+    }
+
+    public int getStorage() {
+        return storage;
+    }
+
+    public void setStorage(int storage) {
+        this.storage = storage;
+    }
+
+    public String getSupplierName() {
+        return SupplierName;
+    }
+
+    public void setSupplierName(String supplierName) {
+        SupplierName = supplierName;
     }
 }

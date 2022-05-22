@@ -1,7 +1,5 @@
 package Main.Admin.IngredientsManager.Model;
 
-import Main.Admin.DataManager.Controller.AdminProductController;
-import Main.Admin.DataManager.Model.ProductInTable;
 import Main.Entity.DataAccess.DAO;
 import Main.Entity.Element.Ingredient;
 import Main.Entity.Element.Product;

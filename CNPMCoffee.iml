@@ -9,9 +9,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="mssql-jdbc-10.2.0.jre8" level="project" />
     <orderEntry type="library" name="xml-apis-1.4.01" level="project" />
     <orderEntry type="library" name="poi-5.2.2" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="mssql-jdbc-10.2.1.jre8" level="project" />
+    <orderEntry type="library" name="poi-scratchpad-5.2.2" level="project" />
   </component>
 </module>

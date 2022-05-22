@@ -1,7 +1,6 @@
 package Main.Entity.DataAccess;
 
 import Main.Admin.DataManager.Controller.AdminProductController;
-import Main.Admin.DataManager.Model.ProductInTable;
 import Main.Entity.Element.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,19 +10,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DAO {
+    private String connectURL = "jdbc:sqlserver://;" +
+                                "serverName=localhost;" +
+                                "databaseName=PTTKHTTT;" +
+                                "encrypt=true;trustServerCertificate=true";
 //    private String connectURL = "jdbc:sqlserver://;" +
-//                                "serverName=localhost;" +
+//                                "serverName=" +
 //                                "databaseName=CNPM;" +
 //                                "encrypt=true;trustServerCertificate=true";
-    private String connectURL = "jdbc:sqlserver://;" +
-                                "serverName=" +
-                                "databaseName=CNPM;" +
-                                "encrypt=true;trustServerCertificate=true";
 
-//    private String DBuser = "sa";
-//    private String DBpass = "123456";
-    private String DBuser = "admin";
-    private String DBpass = "1248163264128";
+    private String DBuser = "sa";
+    private String DBpass = "123456";
+//    private String DBuser = "admin";
+//    private String DBpass = "1248163264128";
 
 
     private Connection connect;
@@ -64,17 +63,8 @@ public class DAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        for(ProductInTable p : AdminProductController.productInTableList){
-            Product tmp = new Product(p.getProductID(), p.getProductName(), p.getCategoryName());
-            if(p.getPriceByS()!=0){
-                tmp.getPriceList().add(new ProductPrice(tmp.getProductId(), "S",p.getPriceByS()));
-            }
-            if(p.getPriceByM()!=0){
-                tmp.getPriceList().add(new ProductPrice(tmp.getProductId(), "M",p.getPriceByM()));
-            }
-            if(p.getPriceByL()!=0){
-                tmp.getPriceList().add(new ProductPrice(tmp.getProductId(), "L",p.getPriceByL()));
-            }
+        for(Product p : AdminProductController.productInTableList){
+            Product tmp = new Product(p.getProductId(), p.getProductName(), p.getCategoryName(),p.getProductPrice(),p.getStorage());
             list.add(tmp);
         }
 

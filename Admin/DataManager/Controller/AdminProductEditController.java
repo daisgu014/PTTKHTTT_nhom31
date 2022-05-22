@@ -1,6 +1,5 @@
 package Main.Admin.DataManager.Controller;
 
-import Main.Admin.DataManager.Model.ProductInTable;
 import Main.Entity.DataAccess.DAO;
 import Main.Entity.Element.Product;
 import javafx.collections.FXCollections;
@@ -10,8 +9,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
-import java.awt.*;
-import java.awt.event.TextEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -46,22 +43,20 @@ public class AdminProductEditController implements Initializable {
         }
 
     }
-    public void handleEvent(ProductInTable product){
+    public void handleEvent(Product product){
         textNameProductEdit.setText(product.getProductName());
         CategoryList.setValue(product.getCategoryName());
-        PriceSEdit.setText(String.valueOf(product.getPriceByS()));
-        PriceMEdit.setText(String.valueOf(product.getPriceByM()));
-        PriceLEdit.setText(String.valueOf(product.getPriceByL()));
+
     }
     public boolean checkNameProduct(String Name) throws SQLException {
         AdminProductController adminProductController = new AdminProductController();
         adminProductController.GetDataProduct();
-        for(ProductInTable product : adminProductController.productInTableList){
+        for(Product product : adminProductController.productInTableList){
             if(product.getProductName().equalsIgnoreCase(Name)) return false;
         }
         return true;
     }
-    public void excuteCheck(ProductInTable product) throws SQLException {
+    public void excuteCheck(Product product) throws SQLException {
         if(!checkNameProduct(textNameProductEdit.getText())){
             ErrorController ErrorController = new ErrorController();
             try {
@@ -84,10 +79,10 @@ public class AdminProductEditController implements Initializable {
         CategoryNameList=FXCollections.observableList(CategoryNameArray);
         CategoryList.setItems(CategoryNameList);
     }
-    public void EditProduct(ProductInTable product) throws SQLException {
+    public void EditProduct(Product product) throws SQLException {
         AdminCategoryController adminCategoryController = new AdminCategoryController();
         DAO dao = new DAO();
-        String ProductID = product.getProductID();
+        String ProductID = product.getProductId();
         String ProductNameEdit = textNameProductEdit.getText();
         String CategoryName = CategoryList.getValue();
         String CategoryId = null;

@@ -2,7 +2,6 @@ package Main.Sales.Sales.View;
 
 import Main.Entity.Element.OrderDetail;
 import Main.Entity.Element.Product;
-import Main.Entity.Element.ProductPrice;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -101,7 +100,7 @@ public class OrderFactory {
         HBox cont = new HBox();
         VBox cont1 = new VBox();
         VBox cont2 = new VBox();
-        cont.setPrefSize(300,200);
+        cont.setPrefSize(300,150);
         cont1.setPrefSize(100,200);
         cont1.setSpacing(5);
         cont2.setPrefSize(100,200);
@@ -112,11 +111,11 @@ public class OrderFactory {
         qtyLbl = new Label("Số lượng: ");
         cont1.getChildren().add(nameInfoLbl);
         cont1.getChildren().add(priceInfoLbl);
-        cont1.getChildren().add(sizeLbl);
+//        cont1.getChildren().add(sizeLbl);
         cont1.getChildren().add(qtyLbl);
         cont2.getChildren().add(nameLbl);
         cont2.getChildren().add(priceLbl);
-        cont2.getChildren().add(sizeChoice);
+//        cont2.getChildren().add(sizeChoice);
         cont2.getChildren().add(qtyControl);
         cont.setId("maincont");
         cont1.setId("cont");
@@ -145,29 +144,29 @@ public class OrderFactory {
         OrderDetail od = new OrderDetail();
         od.setQuantity(0);
         nameLbl.setText(p.getProductName());
-        for(ProductPrice pp : p.getPriceList()){
-            sizeChoice.getItems().add(pp.getSize());
-        }
+//        for(ProductPrice pp : p.getPriceList()){
+//            sizeChoice.getItems().add(pp.getSize());
+//        }
 
 
         sizeChoice.getSelectionModel().select(0);
         qty.setText("1");
-        priceLbl.setText(String.valueOf(p.getPriceList().get(0).getPrice()));
+        priceLbl.setText(String.valueOf(p.getProductPrice()));
         addBtn.setOnAction(actionEvent -> {
             qty.setText(String.valueOf(Integer.parseInt(qty.getText())+1));
             priceLbl.setText(String.valueOf(Integer.parseInt(qty.getText())
-                    * p.getPriceList().get(sizeChoice.getSelectionModel().getSelectedIndex()).getPrice()));
+                    * p.getProductPrice()));
         });
-
+//
         minusBtn.setOnAction(actionEvent -> {
             qty.setText(String.valueOf(Math.max(1,Integer.parseInt(qty.getText())-1)));
             priceLbl.setText(String.valueOf(Integer.parseInt(qty.getText())
-                    * p.getPriceList().get(sizeChoice.getSelectionModel().getSelectedIndex()).getPrice()));
+                    * p.getProductPrice()));
         });
-        sizeChoice.setOnAction(actionEvent -> {
-            priceLbl.setText(String.valueOf(Integer.parseInt(qty.getText())
-                    * p.getPriceList().get(sizeChoice.getSelectionModel().getSelectedIndex()).getPrice()));
-        });
+//        sizeChoice.setOnAction(actionEvent -> {
+//            priceLbl.setText(String.valueOf(Integer.parseInt(qty.getText())
+//                    * p.getPriceList().get(sizeChoice.getSelectionModel().getSelectedIndex()).getPrice()));
+//        });
 
         checkBtn.setOnAction(actionEvent -> {
             od.setQuantity(Integer.parseInt(qty.getText()));
@@ -204,25 +203,25 @@ public class OrderFactory {
         nameLbl.setText(p.getProductName());
         qty.setText(String.valueOf(od.getQuantity()));
 
-        for(ProductPrice pp : p.getPriceList()){
-            sizeChoice.getItems().add(pp.getSize());
-        }
+//        for(ProductPrice pp : p.getPriceList()){
+//            sizeChoice.getItems().add(pp.getSize());
+//        }
         sizeChoice.getSelectionModel().select(od.getSize());
         priceLbl.setText(String.valueOf(od.getPrice()));
         addBtn.setOnAction(actionEvent -> {
             qty.setText(String.valueOf(Integer.parseInt(qty.getText())+1));
             priceLbl.setText(String.valueOf(Integer.parseInt(qty.getText())
-                    * p.getPriceList().get(sizeChoice.getSelectionModel().getSelectedIndex()).getPrice()));
+                    * p.getProductPrice()));
         });
         minusBtn.setOnAction(actionEvent -> {
             qty.setText(String.valueOf(Math.max(1,Integer.parseInt(qty.getText())-1)));
             priceLbl.setText(String.valueOf(Integer.parseInt(qty.getText())
-                    * p.getPriceList().get(sizeChoice.getSelectionModel().getSelectedIndex()).getPrice()));
+                    * p.getProductPrice()));
         });
-        sizeChoice.setOnAction(actionEvent -> {
-            priceLbl.setText(String.valueOf(Integer.parseInt(qty.getText())
-                    * p.getPriceList().get(sizeChoice.getSelectionModel().getSelectedIndex()).getPrice()));
-        });
+//        sizeChoice.setOnAction(actionEvent -> {
+//            priceLbl.setText(String.valueOf(Integer.parseInt(qty.getText())
+//                    * p.getPriceList().get(sizeChoice.getSelectionModel().getSelectedIndex()).getPrice()));
+//        });
 
         checkBtn.setOnAction(actionEvent -> {
             od.setQuantity(Integer.parseInt(qty.getText()));
