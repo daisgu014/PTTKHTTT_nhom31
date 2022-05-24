@@ -48,7 +48,7 @@ public class AdminProductController implements Initializable {
         DAO dao = new DAO();
         ResultSet rs = dao.executeQuery("SELECT ProductID,ProductName,CategoryName,ProductPrice,Storage\n" +
                 "FROM Category, Product\n" +
-                "Where Category.ID=Product.CategoryId");
+                "Where Category.CategoryID=Product.CategoryId");
         while (rs.next()) {
             String productId = rs.getString(1);
             String productName = rs.getString(2);

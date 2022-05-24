@@ -6,16 +6,28 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 
 public class ErrorController {
     @FXML
      Label massage;
+    @FXML
+    ImageView imageView;
+    @FXML
     public void setMassage(String massage1){
         massage.setText(massage1);
     }
+    public void setImageView(String path) throws FileNotFoundException {
+        imageView.setImage(new Image(new FileInputStream(path)));
+    }
+
+
     public void displayError(String errorName) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("../View/ErrorPassword.fxml"));
@@ -30,7 +42,9 @@ public class ErrorController {
                 break;
             case "position":
                 errorController.setMassage("Must be a full-time employee");
-
+            case "save":
+                errorController.setImageView("Icon/check.png");
+                errorController.setMassage("Complete");
         }
         Dialog<ButtonType> dialogError = new Dialog<>();
         dialogError.setTitle("Error");

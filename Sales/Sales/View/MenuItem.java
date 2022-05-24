@@ -56,8 +56,8 @@ public class MenuItem extends VBox {
         Label categoryLbl = new Label(product.getCategoryName());
         this.getChildren().add(nameLbl);
         this.getChildren().add(categoryLbl);
-        this.setMinHeight(200);
-        this.setPrefSize(300,280);
+        this.setMinHeight(400);
+        this.setPrefSize(400,400);
         ImageView image = new ImageView();
         try {
             image.setImage(new Image(new FileInputStream("Icon/camera.png")));
