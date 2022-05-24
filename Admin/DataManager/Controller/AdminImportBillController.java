@@ -52,7 +52,7 @@ public class AdminImportBillController implements Initializable {
         DAO dao = new DAO();
         ResultSet rs = dao.executeQuery("SELECT ProductID,ProductName,CategoryName,ProductPrice,Storage\n" +
                 "FROM Category, Product\n" +
-                "Where Category.ID=Product.CategoryId");
+                "Where Category.CategoryID=Product.CategoryId");
         while (rs.next()) {
             String productId = rs.getString(1);
             String productName = rs.getString(2);
@@ -117,15 +117,13 @@ public class AdminImportBillController implements Initializable {
         dialog.setDialogPane((DialogPane) ImportBillOldProductView);
         AdminImportBillOldProduct adminImportBillOldProduct=loader.getController();
         adminImportBillOldProduct.handleEvent();
-        dialog.showAndWait();
-//        Optional<ButtonType> ClickedButton = dialog.showAndWait();
-//        AdminProductAddController AddController = loader.getController();
-//        if (ClickedButton.get() == ButtonType.APPLY) {
-//            AddController.excuteCheck();
-//
-//        } else if (ClickedButton.get() == ButtonType.CLOSE) {
-//            dialog.close();
-//        }
+        Optional<ButtonType> ClickedButton = dialog.showAndWait();
+        if (ClickedButton.get() == ButtonType.APPLY) {
+            adminImportBillOldProduct.Save();
+
+        } else if (ClickedButton.get() == ButtonType.CLOSE) {
+            dialog.close();
+        }
     }
     public void changeSceneImportBillNewProduct(ActionEvent e) throws IOException, SQLException {
 

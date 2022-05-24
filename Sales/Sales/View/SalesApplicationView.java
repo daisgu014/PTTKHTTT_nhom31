@@ -183,7 +183,6 @@ public class SalesApplicationView{
         orderBody = new TableView<>();
         TableColumn<OrderDetail,String> indexColumn = new TableColumn<>("STT");
         TableColumn<OrderDetail,String> nameColumn = new TableColumn<>("Tên");
-        TableColumn<OrderDetail,String> sizeColumn = new TableColumn<>("Size");
         TableColumn<OrderDetail,Integer> qtyColumn = new TableColumn<>("Số lượng");
         TableColumn<OrderDetail,Integer> priceColumn = new TableColumn<>("Thành tiền");
 
@@ -192,13 +191,11 @@ public class SalesApplicationView{
 
         nameColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue()
                                                     .getProductChoice().getProductName()));
-        sizeColumn.setCellValueFactory(new PropertyValueFactory<>("size"));
         qtyColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 
         indexColumn.setPrefWidth(30);
         nameColumn.setPrefWidth(110);
-        sizeColumn.setPrefWidth(40);
         qtyColumn.setPrefWidth(80);
         priceColumn.setPrefWidth(100);
 
@@ -209,7 +206,7 @@ public class SalesApplicationView{
         });
 
 
-        orderBody.getColumns().addAll(indexColumn,nameColumn,sizeColumn,qtyColumn,priceColumn);
+        orderBody.getColumns().addAll(indexColumn,nameColumn,qtyColumn,priceColumn);
         initOrder();
 
     }
