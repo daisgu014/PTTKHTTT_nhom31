@@ -23,7 +23,7 @@ public class ControlBar extends VBox {
     Scene salesScreen;
     Scene eodScreen;
     Scene dataManagerScreen;
-    Scene ingredientManagerScreen;
+//    Scene ingredientManagerScreen;
     Scene salaryManagerScreen;
     Scene loginScreen;
     Stage owner;
@@ -58,7 +58,6 @@ public class ControlBar extends VBox {
                 this.getChildren().add(saleBtn);
                 this.getChildren().add(EoDsBtn);
                 this.getChildren().add(dataBtn);
-                this.getChildren().add(ingredientBtn);
                 this.getChildren().add(salaryBtn);
                 dataBtn.setSelected(true);
                 owner.setScene(dataManagerScreen);
@@ -80,9 +79,8 @@ public class ControlBar extends VBox {
             fx.setLocation(getClass().getResource("../../Admin/DataManager/View/Admin.fxml"));
             dataManagerScreen = new Scene(fx.load());
             dataControl = fx.getController();
-            ingredientManagerScreen = new Scene(FXMLLoader.load(getClass().getResource("../../Admin/IngredientsManager/View/IngredientOrder.fxml")));
-            eodScreen = new Scene(FXMLLoader.load(new File("Sales/ReportEndDay/View/ReportEndDay.fxml").toURI().toURL()));
-            eodScreen.getStylesheets().add(new File("Sales/ReportEndDay/View/CSS/ReportEndDay.css").toURI().toURL().toExternalForm());
+//            eodScreen = new Scene(FXMLLoader.load(new File("Sales/ReportEndDay/View/ReportEndDay.fxml").toURI().toURL()));
+//            eodScreen.getStylesheets().add(new File("Sales/ReportEndDay/View/CSS/ReportEndDay.css").toURI().toURL().toExternalForm());
             loginScreen = new Scene(FXMLLoader.load(new File("Helpers/SignIn/Signinv2.fxml").toURI().toURL()));
 
             salaryManagerScreen = new Scene(FXMLLoader.load(getClass().getResource("../../Admin/SalaryCalculate/View/Timekeeping.fxml")));
@@ -98,7 +96,6 @@ public class ControlBar extends VBox {
         saleBtn.setToggleGroup(gr);
         EoDsBtn.setToggleGroup(gr);
         dataBtn.setToggleGroup(gr);
-        ingredientBtn.setToggleGroup(gr);
         salaryBtn.setToggleGroup(gr);
 
         logoutBtn = new Button("Logout");
@@ -212,10 +209,10 @@ public class ControlBar extends VBox {
         salaryBtn.setOnAction(e->{
             owner.setScene(salaryManagerScreen);
         });
-        ingredientBtn.setOnAction(e->{
-            owner.setScene(ingredientManagerScreen);
-            //changeLocation();
-        });
+//        ingredientBtn.setOnAction(e->{
+//            owner.setScene(ingredientManagerScreen);
+//            //changeLocation();
+//        });
         logoutBtn.setOnAction(e->showFunction(0));
 
     }

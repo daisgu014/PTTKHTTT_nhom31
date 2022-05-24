@@ -88,8 +88,7 @@ public class SalesApplicationModel {
     public void addItem(OrderDetail od){
         boolean flag = false;
         for(OrderDetail orderDetail : currentChoices){
-            if(orderDetail.getProductChoice().getProductId().equals(od.getProductChoice().getProductId())
-                    && orderDetail.getSize().equals(od.getSize())){
+            if(orderDetail.getProductChoice().getProductId().equals(od.getProductChoice().getProductId())){
                 orderDetail.setQuantity(orderDetail.getQuantity()+od.getQuantity());
                 orderDetail.setPrice(orderDetail.getPrice()+od.getPrice());
                 flag=true;
@@ -114,7 +113,7 @@ public class SalesApplicationModel {
         PreparedStatement pstm;
         try {
            pstm = dao.getPrepareStatement(
-                    "insert into Orders (TotalPrice, OrderDate, OrderTime, Cashier) " +
+                    "insert into Orders (TotalPrice, OrderDate, OrderTime, EmployeeID) " +
                     "output inserted.OrderID " +
                     "values(" +
                     "?, getDate(), getDate(), ? " +
@@ -127,11 +126,10 @@ public class SalesApplicationModel {
            String orderId = rs.getString(1);
 
            for (OrderDetail od : currentChoices){
-               pstm = dao.getPrepareStatement("insert into OrderDetails values (?,?,?,?)");
+               pstm = dao.getPrepareStatement("insert into OrderDetails values (?,?,?)");
                pstm.setString(1,orderId);
                pstm.setString(2,od.getProductChoice().getProductId());
                pstm.setInt(3,od.getQuantity());
-               pstm.setString(4, od.getSize());
                pstm.execute();
            }
         } catch (SQLException e) {
