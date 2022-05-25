@@ -1,5 +1,4 @@
 ﻿create DATABASE PTTKHTTT
-
 use PTTKHTTT
 --Cơ sở dữ liệu chung cho nhân viên
 --Nhân viên
@@ -26,7 +25,8 @@ create table WorkPosition
 (
 	ID int identity(1, 1) not null,
 	[WorkPositionID] as ('WP' + right(replicate('0', 3) + cast(ID as varchar(3)), 3)) persisted not null,
-	WorkPositionName nvarchar(30) not null
+	WorkPositionName nvarchar(30) not null,
+	WorkPositionLVL varchar(10)
 );
 
 --Loại nhân viên
@@ -87,7 +87,7 @@ create table Orders
 	OrderDate date not null,
 	OrderTime time not null,
 	EmployeeID varchar(7) not null,
-	NumberPhoneCustomer varchar(10) unique
+	NumberPhoneCustomer varchar(10) 
 );
 create table OrderDetails
 (
@@ -188,11 +188,8 @@ alter table ImportBillDetails add constraint FK_ImportBillDetails_ImportBill for
 
 -- Thêm dữ liệu cho bảng WorkType
 INSERT INTO dbo.WorkType(WorkTypeName) VALUES ('Parttime'), ('Fulltime');
-
 -- Thêm dữ liệu cho bảng WorkPosition
-INSERT INTO dbo.WorkPosition(WorkPositionName) VALUES ('Manager'), ('Sale');
-
-SELECT * FROM WorkPosition, WorkType
+INSERT INTO dbo.WorkPosition(WorkPositionName, WorkPositionLVL) VALUES ('Manager',2), ('Sale',1);
 
 INSERT INTO PositionType (WorkPositionID,WorkTypeID,SalaryPerHour) VALUES ('WP001','WT002',50000), ('WP002','WT001',25000), ('WP002','WT002',30000)
 
@@ -232,14 +229,10 @@ insert into Product(ProductName, ProductPrice, Storage, CategoryID) values
 ('sony HX350 ', 8000000, 10,'CAT005'),
 ('Sony HX99 ', 10900000, 10,'CAT005')
 
-SELECT ProductID,ProductName,CategoryName,ProductPrice,Storage
-                FROM Category, Product 
-                Where Category.CategoryID=Product.CategoryId
 
-alter table WorkPosition add WorkPositionLVL varchar(10)
-
-SELECT * FROM  ImportBill
-
-SELECT * FROM ImportBillDetails
-
-SElECT * FROM Product
+SELECT Product.ProductName, Category.CategoryName, ImportBillDetails.Quantity
+FROM ImportBill, ImportBillDetails, Product, Category
+Where ImportBill.ImportBillID=ImportBillDetails.ImportBillID
+AND ImportBill.ImportBillID='IB001'
+AND ImportBillDetails.ProductID=Product.ProductID
+AND Product.CategoryId=Category.CategoryID
