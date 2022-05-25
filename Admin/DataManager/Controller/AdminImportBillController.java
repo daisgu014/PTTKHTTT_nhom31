@@ -120,7 +120,8 @@ public class AdminImportBillController implements Initializable {
         Optional<ButtonType> ClickedButton = dialog.showAndWait();
         if (ClickedButton.get() == ButtonType.APPLY) {
             adminImportBillOldProduct.Save();
-
+            productTableView.setItems(productInTables);
+            productTableView.refresh();
         } else if (ClickedButton.get() == ButtonType.CLOSE) {
             dialog.close();
         }
@@ -142,6 +143,15 @@ public class AdminImportBillController implements Initializable {
 //        } else if (ClickedButton.get() == ButtonType.CLOSE) {
 //            dialog.close();
 //        }
+    }
+    public void changeScenceImportBill(ActionEvent e) throws IOException {
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        stage.centerOnScreen();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../View/AdminImportBill.fxml"));
+        Parent ProductViewParent = loader.load();
+        Scene scene = new Scene(ProductViewParent);
+        stage.setScene(scene);
     }
     public void GoBack(ActionEvent e) throws IOException {
         Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
