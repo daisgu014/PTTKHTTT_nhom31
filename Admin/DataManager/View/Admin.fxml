@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="449.0" prefWidth="671.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Admin.DataManager.Controller.AdminController">
    <children>
-      <Label id="header" prefHeight="30.0" prefWidth="671.0" text="Coffe Manage" />
+      <Label id="header" prefHeight="30.0" prefWidth="671.0" text="CameraShop Manage" />
        <Button contentDisplay="TOP" layoutX="63.0" layoutY="111.0" mnemonicParsing="false" onAction="#changeSceneEmployee" prefHeight="123.0" prefWidth="101.0" styleClass="button-icon" stylesheets="@Css/AdminApplication.css" text="Employee" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
            <graphic>
                <ImageView fitHeight="82.0" fitWidth="102.0" layoutX="178.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
@@ -23,7 +23,7 @@
          <graphic>
             <ImageView fitHeight="82.0" fitWidth="102.0" layoutX="178.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Icon/products.png" />
+                  <Image url="@../../../Icon/camera%202.png" />
                </image>
             </ImageView>
          </graphic>

@@ -23,7 +23,10 @@ public class SigninController {
 
     @FXML
     private PasswordField passTxf;
-
+    public void DangNhap(){
+        userTxf.setText("daisgu014");
+        passTxf.setText("123456");
+    }
     @FXML
     void checkSignIn(ActionEvent event) {
         String user = userTxf.getText();

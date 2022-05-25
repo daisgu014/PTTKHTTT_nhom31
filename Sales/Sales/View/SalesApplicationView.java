@@ -54,7 +54,6 @@ public class SalesApplicationView{
     Label priceLbl;
     Button cashBtn;
 
-    private String[] cates = {"ALL","Trà Xanh","Trà sữa", "Cà phê"};
 
     private String filerCondition ="ALL";
 

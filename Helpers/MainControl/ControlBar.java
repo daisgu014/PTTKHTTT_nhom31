@@ -1,6 +1,7 @@
 package Main.Helpers.MainControl;
 
 import Main.Admin.DataManager.Controller.AdminController;
+import Main.Helpers.SignIn.SigninController;
 import Main.Sales.ReportEndDay.Control.ReportCancelDay;
 import Main.Sales.Sales.Control.SalesApplicationControl;
 import javafx.fxml.FXMLLoader;
@@ -79,8 +80,8 @@ public class ControlBar extends VBox {
             fx.setLocation(getClass().getResource("../../Admin/DataManager/View/Admin.fxml"));
             dataManagerScreen = new Scene(fx.load());
             dataControl = fx.getController();
-//            eodScreen = new Scene(FXMLLoader.load(new File("Sales/ReportEndDay/View/ReportEndDay.fxml").toURI().toURL()));
-//            eodScreen.getStylesheets().add(new File("Sales/ReportEndDay/View/CSS/ReportEndDay.css").toURI().toURL().toExternalForm());
+            eodScreen = new Scene(FXMLLoader.load(new File("Sales/ReportEndDay/View/ReportEndDay.fxml").toURI().toURL()));
+            eodScreen.getStylesheets().add(new File("Sales/ReportEndDay/View/CSS/ReportEndDay.css").toURI().toURL().toExternalForm());
             loginScreen = new Scene(FXMLLoader.load(new File("Helpers/SignIn/Signinv2.fxml").toURI().toURL()));
 
             salaryManagerScreen = new Scene(FXMLLoader.load(getClass().getResource("../../Admin/SalaryCalculate/View/Timekeeping.fxml")));
@@ -114,7 +115,10 @@ public class ControlBar extends VBox {
 
     public void start(){
         try {
-            loginScreen = new Scene(FXMLLoader.load(new File("Helpers/SignIn/Signinv2.fxml").toURI().toURL()));
+            FXMLLoader loader = new FXMLLoader(new File("Helpers/SignIn/Signinv2.fxml").toURI().toURL());
+            loginScreen = new Scene(loader.load());
+            SigninController controller = loader.getController();
+            controller.DangNhap();
             } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -129,7 +133,7 @@ public class ControlBar extends VBox {
 
     private void setBtnImgandTooltip(){
         try {
-            ImageView img = new ImageView(new Image(new FileInputStream("Icon/coffee-cup.png")));
+            ImageView img = new ImageView(new Image(new FileInputStream("Icon/camera1.png")));
             img.setFitHeight(25);
             img.setFitWidth(25);
             saleBtn.setGraphic(img);

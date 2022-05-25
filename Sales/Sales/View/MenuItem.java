@@ -56,7 +56,7 @@ public class MenuItem extends VBox {
         Label categoryLbl = new Label(product.getCategoryName());
         this.getChildren().add(nameLbl);
         this.getChildren().add(categoryLbl);
-        this.setMinHeight(400);
+        this.setMinHeight(350);
         this.setPrefSize(400,400);
         ImageView image = new ImageView();
         try {
