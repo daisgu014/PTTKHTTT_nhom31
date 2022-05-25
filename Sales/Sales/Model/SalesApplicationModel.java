@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SalesApplicationModel {
+public class    SalesApplicationModel {
     List<Product> productList;
     Order currentOrders;
     ArrayList<OrderDetail> currentChoices;
@@ -131,6 +131,8 @@ public class SalesApplicationModel {
                pstm.setString(2,od.getProductChoice().getProductId());
                pstm.setInt(3,od.getQuantity());
                pstm.execute();
+           dao.execute("UPDATE Product SET Storage=Storage-"+od.getQuantity()+ " Where ProductID like '"+od.getProductChoice().getProductId()+"'");
+
            }
         } catch (SQLException e) {
             throw new RuntimeException(e);

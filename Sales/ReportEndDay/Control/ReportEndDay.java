@@ -68,11 +68,11 @@ public class ReportEndDay extends SceneController implements Initializable {
 //            String user = "admin";
 //            String pass = "123456";
              String url = "jdbc:sqlserver://;" +
-                    "serverName=" +
-                    "databaseName=CNPM;" +
+                    "serverName=localhost;" +
+                    "databaseName=PTTKHTTT;" +
                     "encrypt=true;trustServerCertificate=true";
-             String user = "admin";
-             String pass = "1248163264128";
+             String user = "sa";
+             String pass = "123456";
             cnn = DriverManager.getConnection(url, user, pass);
             Statement state = cnn.createStatement();
             rs = state.executeQuery(yourQuery);
@@ -152,28 +152,30 @@ public class ReportEndDay extends SceneController implements Initializable {
         if (valueTotalTea.compareToIgnoreCase("") == 0) {
             valueTotalTea = "0";
         }
-        totalTea.setText(valueTotalTea);
-        valueTotalCoffee = getData("select sum(odt.Quantity) from OrderDetails odt join Orders od " +
-                "ON od.OrderID = odt.OrderID join Product pd on pd.ProductID = odt.ProductID join Category ct " +
-                "on ct.CategoryID = pd.CategoryID where ct.CategoryName like N'Cà phê' " +
-                "and od.OrderDate = '%s' group by od.OrderDate", time);
-        if (valueTotalCoffee.compareToIgnoreCase("") == 0) {
-            valueTotalCoffee = "0";
-        }
-        totalCoffee.setText(valueTotalCoffee);
-        valueTotalBread = getData("select sum(odt.Quantity) from OrderDetails odt join Orders od " +
-                "ON od.OrderID = odt.OrderID join Product pd on pd.ProductID = odt.ProductID join Category ct " +
-                "on ct.CategoryID = pd.CategoryID where ct.CategoryName like N'Bánh mì' " +
-                "and od.OrderDate = '%s' group by od.OrderDate", time);
-        if (valueTotalBread.compareToIgnoreCase("") == 0) {
-            valueTotalBread = "0";
-        }
-        totalBread.setText(valueTotalBread);
+//
+//        valueTotalCoffee = getData("select sum(odt.Quantity) from OrderDetails odt join Orders od " +
+//                "ON od.OrderID = odt.OrderID join Product pd on pd.ProductID = odt.ProductID join Category ct " +
+//                "on ct.CategoryID = pd.CategoryID where ct.CategoryName like N'Cà phê' " +
+//                "and od.OrderDate = '%s' group by od.OrderDate", time);
+//        if (valueTotalCoffee.compareToIgnoreCase("") == 0) {
+//            valueTotalCoffee = "0";
+//        }
+//        totalCoffee.setText(valueTotalCoffee);
+//        valueTotalBread = getData("select sum(odt.Quantity) from OrderDetails odt join Orders od " +
+//                "ON od.OrderID = odt.OrderID join Product pd on pd.ProductID = odt.ProductID join Category ct " +
+//                "on ct.CategoryID = pd.CategoryID where ct.CategoryName like N'Bánh mì' " +
+//                "and od.OrderDate = '%s' group by od.OrderDate", time);
+//        if (valueTotalBread.compareToIgnoreCase("") == 0) {
+//            valueTotalBread = "0";
+//        }
+//        totalBread.setText(valueTotalBread);
         boolean check = false;
 
         try {
-            valueTotalProduct = String.valueOf(Integer.parseInt(valueTotalTea) +
-                    Integer.parseInt(valueTotalCoffee) + Integer.parseInt(valueTotalBread));
+            valueTotalProduct = getData("select sum(odt.Quantity) from OrderDetails odt join Orders od " +
+                "ON od.OrderID = odt.OrderID join Product pd on pd.ProductID = odt.ProductID join Category ct " +
+                "on ct.CategoryID = pd.CategoryID " +
+                "and od.OrderDate = '%s' group by od.OrderDate", time);
             check = true;
 
         } catch (NumberFormatException e) {

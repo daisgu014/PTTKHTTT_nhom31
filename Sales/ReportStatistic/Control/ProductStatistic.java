@@ -77,11 +77,11 @@ public class ProductStatistic extends ScreenManager implements Initializable {
 //            String user = "admin";
 //            String pass = "123456";
             String url = "jdbc:sqlserver://;" +
-                    "serverName=" +
-                    "databaseName=CNPM;" +
+                    "serverName=localhost;" +
+                    "databaseName=PTTKHTTT;" +
                     "encrypt=true;trustServerCertificate=true";
-            String user = "admin";
-            String pass = "1248163264128";
+            String user = "sa";
+            String pass = "123456";
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             cnn = DriverManager.getConnection(url, user, pass);
             Statement state = cnn.createStatement();
@@ -140,11 +140,10 @@ public class ProductStatistic extends ScreenManager implements Initializable {
                     endTime = dateFormat.format(finishDate);
                     listProd.clear();
                     getData(
-                            "select pd.ProductID, pd.ProductName, pd.CategoryID, sum(pr.ProductPrice*odt.Quantity), sum(odt.Quantity), od.OrderDate " +
+                            "select pd.ProductID, pd.ProductName, pd.CategoryID, sum(pd.ProductPrice*odt.Quantity), sum(odt.Quantity), od.OrderDate " +
                                     "from Orders od join OrderDetails odt on odt.OrderID = od.OrderID " +
                                     "join Product pd on pd.ProductID = odt.ProductID join Category ct on ct.CategoryID = pd.CategoryID " +
-                                    "join ProductPrice pr on pr.ProductID = odt.ProductID " +
-                                    "where od.OrderDate >=('%s') and od.OrderDate <= ('%s') and pr.ProductSize = odt.productSize " +
+                                    "where od.OrderDate >=('%s') and od.OrderDate <= ('%s')" +
                                     "group by od.OrderDate, pd.ProductID, pd.ProductName, pd.CategoryID", startTime, endTime);
                     tableProduct.refresh();
                 } else {
@@ -197,12 +196,11 @@ public class ProductStatistic extends ScreenManager implements Initializable {
                     endTime = dateFormat.format(finishDate);
                     listProd.clear();
                     getData(
-                            "select pd.ProductID, pd.ProductName, pd.CategoryID, sum(pr.ProductPrice*odt.Quantity), sum(odt.Quantity), od.OrderDate " +
+                            "select pd.ProductID, pd.ProductName, ct.CategoryName, sum(pd.ProductPrice*odt.Quantity), sum(odt.Quantity), od.OrderDate " +
                             "from Orders od join OrderDetails odt on odt.OrderID = od.OrderID " +
                             "join Product pd on pd.ProductID = odt.ProductID join Category ct on ct.CategoryID = pd.CategoryID " +
-                            "join ProductPrice pr on pr.ProductID = odt.ProductID " +
-                            "where od.OrderDate >=('%s') and od.OrderDate <= ('%s') and pr.ProductSize = odt.productSize " +
-                            "group by od.OrderDate, pd.ProductID, pd.ProductName, pd.CategoryID", startTime, endTime);
+                            "where od.OrderDate >=('%s') and od.OrderDate <= ('%s') " +
+                            "group by od.OrderDate, pd.ProductID, pd.ProductName, ct.CategoryName", startTime, endTime);
                 } else {
                     Alert alert = new Alert(AlertType.ERROR);
                     alert.setHeaderText(null);

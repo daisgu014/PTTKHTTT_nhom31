@@ -1,4 +1,5 @@
 ﻿create DATABASE PTTKHTTT
+
 use PTTKHTTT
 --Cơ sở dữ liệu chung cho nhân viên
 --Nhân viên
@@ -69,8 +70,8 @@ create table Product
 	[ProductID] as ('PD' +	right(replicate('0', 4) + cast(ID as varchar(4)), 4)) persisted not null,
 	ProductName nvarchar(50) not null unique,
 	ProductPrice int not null,
-	CategoryId int not null,
-	Storage int not null;
+	CategoryId varchar(6) not null,
+	Storage int not null,
 	SuppilerID varchar(5)  
 );
 create table Customer
@@ -105,7 +106,7 @@ create table ImportBill
 	ID int identity (1,1) not null,
 	[ImportBillID] as  ('IB' + right(replicate('0', 3) + cast(ID as varchar(3)), 3)) persisted not null,
 	CreateDate date not null,
-	SupplierID int not null
+	SupplierID varchar(5) 
 );
 create table ImportBillDetails
 (

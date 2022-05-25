@@ -71,11 +71,11 @@ public class CategoryStatistic extends ScreenManager implements Initializable {
 //            String user = "admin";
 //            String pass = "123456";
             String url = "jdbc:sqlserver://;" +
-                    "serverName=" +
-                    "databaseName=CNPM;" +
+                    "serverName=localhost;" +
+                    "databaseName=PTTKHTTT;" +
                     "encrypt=true;trustServerCertificate=true";
-            String user = "admin";
-            String pass = "1248163264128";
+            String user = "sa";
+            String pass = "123456";
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             cnn = DriverManager.getConnection(url, user, pass);
             Statement state = cnn.createStatement();
@@ -132,7 +132,13 @@ public class CategoryStatistic extends ScreenManager implements Initializable {
                     startTime = dateFormat.format(beginDate);
                     endTime = dateFormat.format(finishDate);
                     listCate.clear();
-                    getData("select ct.CategoryID, ct.CategoryName, sum(odt.Quantity) from Category ct join Product pd on pd.CategoryID = ct.CategoryID join OrderDetails odt on odt.ProductID = pd.ProductID join Orders od on od.OrderID = odt.OrderID where od.OrderDate >=('%s') and od.OrderDate <= ('%s') group by ct.CategoryID, ct.CategoryName", startTime, endTime);
+                    getData("select ct.CategoryID, ct.CategoryName, sum(odt.Quantity) " +
+                            "from Category ct " +
+                            "join Product pd on pd.CategoryID = ct.CategoryID " +
+                            "join OrderDetails odt on odt.ProductID = pd.ProductID " +
+                            "join Orders od on od.OrderID = odt.OrderID " +
+                            "where od.OrderDate >=('%s') and od.OrderDate <= ('%s')" +
+                            " group by ct.CategoryID, ct.CategoryName", startTime, endTime);
                     tableProduct.refresh();
                 } else {
                     Alert alert = new Alert(AlertType.ERROR);
@@ -181,7 +187,13 @@ public class CategoryStatistic extends ScreenManager implements Initializable {
                     startTime = dateFormat.format(beginDate);
                     endTime = dateFormat.format(finishDate);
                     listCate.clear();
-                    getData("select ct.CategoryID, ct.CategoryName, sum(odt.Quantity) from Category ct join Product pd on pd.CategoryID = ct.CategoryID join OrderDetails odt on odt.ProductID = pd.ProductID join Orders od on od.OrderID = odt.OrderID where od.OrderDate >=('%s') and od.OrderDate <= ('%s') group by ct.CategoryID, ct.CategoryName", startTime, endTime);
+                    getData("select ct.CategoryID, ct.CategoryName, sum(odt.Quantity) " +
+                            "from Category ct " +
+                            "join Product pd on pd.CategoryID = ct.CategoryID " +
+                            "join OrderDetails odt on odt.ProductID = pd.ProductID " +
+                            "join Orders od on od.OrderID = odt.OrderID " +
+                            "where od.OrderDate >=('%s') and od.OrderDate <= ('%s') " +
+                            "group by ct.CategoryID, ct.CategoryName", startTime, endTime);
                 } else {
                     Alert alert = new Alert(AlertType.ERROR);
                     alert.setHeaderText(null);

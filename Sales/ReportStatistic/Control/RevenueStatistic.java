@@ -68,11 +68,11 @@ public class RevenueStatistic extends ScreenManager implements Initializable {
 //            String user = "admin";
 //            String pass = "123456";
             String url = "jdbc:sqlserver://;" +
-                    "serverName=" +
-                    "databaseName=CNPM;" +
+                    "serverName=localhost;" +
+                    "databaseName=PTTKHTTT;" +
                     "encrypt=true;trustServerCertificate=true";
-            String user = "admin";
-            String pass = "1248163264128";
+            String user = "sa";
+            String pass = "123456";
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             cnn = DriverManager.getConnection(url, user, pass);
             Statement state = cnn.createStatement();

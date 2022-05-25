@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AdminController {
+public class AdminController implements Initializable{
     @FXML
     private Label txtUserName;
 
@@ -91,10 +91,9 @@ public class AdminController {
 //        stage.setScene(new Scene(fxmlLoader.load()));
 //        stage.show();
 //    }
-}
 
-//    @Override
-//    public void initialize(URL url, ResourceBundle resourceBundle) {
-//        this.setTxtUserName(MainApp.staff.getEmployeeName());
-//    }
-//}
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.setTxtUserName(MainApp.staff.getEmployeeName());
+    }
+}

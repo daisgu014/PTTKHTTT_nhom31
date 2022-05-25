@@ -1,5 +1,6 @@
 package Main.Sales.Sales.Control;
 
+import Main.Admin.DataManager.Controller.ErrorController;
 import Main.Entity.DataAccess.DAO;
 import Main.Entity.Element.OrderDetail;
 import Main.Entity.Element.Product;
@@ -7,6 +8,8 @@ import Main.Sales.Sales.Model.SalesApplicationModel;
 import Main.Sales.Sales.View.OrderFactory;
 import Main.Sales.Sales.View.SalesApplicationView;
 import javafx.scene.Scene;
+
+import java.io.IOException;
 
 public class SalesApplicationControl {
 
@@ -24,9 +27,15 @@ public class SalesApplicationControl {
         return this.view.getScreen();
     }
 
-    public void cash(){
+    public void cash()  {
         this.model.payCurrentOrder();
         this.view.updateOrder();
+        ErrorController errorController =new ErrorController();
+        try {
+            errorController.displayError("save");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void addNewItem(Product p){
