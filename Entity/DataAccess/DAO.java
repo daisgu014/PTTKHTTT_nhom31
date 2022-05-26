@@ -64,8 +64,11 @@ public class DAO {
             throw new RuntimeException(e);
         }
         for(Product p : AdminProductController.productInTableList){
-            Product tmp = new Product(p.getProductId(), p.getProductName(), p.getCategoryName(),p.getProductPrice(),p.getStorage());
-            list.add(tmp);
+            if(p.getStorage()>0){
+                Product tmp = new Product(p.getProductId(), p.getProductName(), p.getCategoryName(),p.getProductPrice(),p.getStorage());
+                list.add(tmp);
+            }
+
         }
 
         return list;

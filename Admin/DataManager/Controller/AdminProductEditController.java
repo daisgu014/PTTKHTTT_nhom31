@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
@@ -18,35 +19,22 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 
-public class AdminProductEditController implements Initializable {
+public class AdminProductEditController{
     @FXML
     private TextField textNameProductEdit;
     @FXML
-    private TextField PriceSEdit;
+    private Label lbCategory;
     @FXML
-    private TextField PriceMEdit;
+    private TextField textPrice;
     @FXML
-    private TextField PriceLEdit;
-    @FXML
-    ComboBox<String> CategoryList;
-    public static List<String> CategoryNameArray = new ArrayList<>();
-    private ObservableList<String> CategoryNameList;
+    private Label lbStorage;
 
     AdminProductController adminProductController = new AdminProductController();
-    public void getCategoryName() throws SQLException {
-        CategoryNameArray.clear();
-        DAO dao = new DAO();
-        ResultSet rs = dao.executeQuery("SELECT * FROM Category");
-        while (rs.next()){
-            String CategoryName = rs.getString(3);
-            CategoryNameArray.add(CategoryName);
-        }
-
-    }
     public void handleEvent(Product product){
         textNameProductEdit.setText(product.getProductName());
-        CategoryList.setValue(product.getCategoryName());
-
+        lbCategory.setText(product.getCategoryName());
+        textPrice.setText(String.valueOf(product.getProductPrice()));
+        lbStorage.setText(String.valueOf(product.getStorage()));
     }
     public boolean checkNameProduct(String Name) throws SQLException {
         AdminProductController adminProductController = new AdminProductController();
@@ -68,55 +56,20 @@ public class AdminProductEditController implements Initializable {
             EditProduct(product);
         }
     }
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        try {
-            getCategoryName();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        CategoryNameList=FXCollections.observableList(CategoryNameArray);
-        CategoryList.setItems(CategoryNameList);
-    }
     public void EditProduct(Product product) throws SQLException {
         AdminCategoryController adminCategoryController = new AdminCategoryController();
         DAO dao = new DAO();
         String ProductID = product.getProductId();
         String ProductNameEdit = textNameProductEdit.getText();
-        String CategoryName = CategoryList.getValue();
-        String CategoryId = null;
-        adminCategoryController.getData();
-        for(int i=0;i<adminCategoryController.list.size();i++)
-        {
-            if(adminCategoryController.list.get(i).getCategoryName().equalsIgnoreCase(CategoryName)){
-                CategoryId=adminCategoryController.list.get(i).getCategoryId();
-            }
-        }
-        int PriceS;
-        if (PriceSEdit.getText().equalsIgnoreCase("")){
-            PriceS=0;
-        }else{
-            PriceS= Integer.parseInt(PriceSEdit.getText());
-        };
-        int PriceM;
-        if(PriceMEdit.getText().equalsIgnoreCase("")){
-            PriceM=0;
-        }else{
-            PriceM=Integer.parseInt(PriceMEdit.getText());
-        }
-        int PriceL;
-        if (PriceLEdit.getText().equalsIgnoreCase("")){
-            PriceL = 0;
-        }else{
-            PriceL=Integer.parseInt(PriceLEdit.getText());
-        }
-
-        dao.execute("UPDATE Product Set ProductName=N'"+ProductNameEdit+"', CategoryID='"+CategoryId+"' Where ProductID LIKE '"+ProductID+"'");
-        dao.execute("UPDATE ProductPrice Set ProductPrice="+PriceS+" Where ProductID LIKE '"+ProductID+"' AND ProductSize LIKE 'S'");
-        dao.execute("UPDATE ProductPrice Set ProductPrice="+PriceM+" Where ProductID LIKE '"+ProductID+"' AND ProductSize LIKE 'M'");
-        dao.execute("UPDATE ProductPrice Set ProductPrice="+PriceL+" Where ProductID LIKE '"+ProductID+"' AND ProductSize LIKE 'L'");
+        int price = Integer.parseInt(textPrice.getText());
+        dao.execute("UPDATE Product Set ProductName=N'"+ProductNameEdit+"', ProductPrice="+price+" Where ProductID LIKE '"+ProductID+"'");
         adminProductController.GetDataProduct();
+        ErrorController errorController = new ErrorController();
+        try {
+            errorController.displayError("save");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 

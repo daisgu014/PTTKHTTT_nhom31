@@ -105,12 +105,16 @@ public class SalesApplicationView{
         root.setTop(controlPnl);
     }
 
-    private void prepareMenuItem(){
+    public void prepareMenuItem(){
         itemList = new ArrayList<>();
         for (Product p : this.controller.getModel().getProductList()) {
             MenuItem tmp = new MenuItem(p);
             tmp.setOnMouseClicked(mouseEvent -> {
-                controller.addNewItem(p);
+                try {
+                    controller.addNewItem(p);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
             });
             itemList.add(tmp);
         }

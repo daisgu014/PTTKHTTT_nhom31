@@ -45,6 +45,11 @@ public class ErrorController {
             case "save":
                 errorController.setImageView("Icon/check.png");
                 errorController.setMassage("Complete");
+                break;
+            case "quantity":
+                errorController.setImageView("Icon/warning-sign.png");
+                errorController.setMassage("Product is not enough");
+                break;
         }
         Dialog<ButtonType> dialogError = new Dialog<>();
         dialogError.setTitle("Error");

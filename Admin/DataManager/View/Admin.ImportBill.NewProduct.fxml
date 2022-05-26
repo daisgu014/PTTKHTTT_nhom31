@@ -17,12 +17,12 @@
 
                 </Label>
                 <TextField fx:id="textName" layoutX="212.0" layoutY="89.0" prefHeight="38.0" prefWidth="198.0" promptText="Enter ProductName" styleClass="TextFieldInput" />
-                <TextField fx:id="Price" layoutX="214.0" layoutY="309.0" prefHeight="38.0" prefWidth="198.0" promptText="Enter Quantity" styleClass="TextFieldInput" />
+                <TextField fx:id="storage" layoutX="214.0" layoutY="309.0" prefHeight="38.0" prefWidth="198.0" promptText="Enter Quantity" styleClass="TextFieldInput" />
                 <Label layoutX="45.0" layoutY="158.0" prefHeight="46.0" prefWidth="123.0" styleClass="LabelTilte" text="Category" />
                 <Label layoutX="45.0" layoutY="305.0" prefHeight="46.0" prefWidth="123.0" styleClass="LabelTilte" text="Storage" />
                 <Label layoutX="45.0" layoutY="234.0" prefHeight="46.0" prefWidth="123.0" styleClass="LabelTilte" text="Price" />
-                <TextField fx:id="Price1" layoutX="214.0" layoutY="238.0" prefHeight="38.0" prefWidth="198.0" promptText="EnterPrice" styleClass="TextFieldInput" />
-            <ComboBox layoutX="214.0" layoutY="161.0" prefHeight="40.0" prefWidth="194.0" styleClass="TextFieldInput" />
+                <TextField fx:id="Price" layoutX="214.0" layoutY="238.0" prefHeight="38.0" prefWidth="198.0" promptText="EnterPrice" styleClass="TextFieldInput" />
+            <ComboBox fx:id="CategoryList" layoutX="214.0" layoutY="161.0" prefHeight="40.0" prefWidth="194.0" styleClass="TextFieldInput" />
             </children></AnchorPane>
     </header>
     <content>

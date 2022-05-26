@@ -10,6 +10,7 @@ import Main.Sales.Sales.View.SalesApplicationView;
 import javafx.scene.Scene;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class SalesApplicationControl {
 
@@ -29,8 +30,10 @@ public class SalesApplicationControl {
 
     public void cash()  {
         this.model.payCurrentOrder();
+        this.model.setProductList(dao.getAllProduct());
+        this.view.prepareMenuItem();
         this.view.updateOrder();
-        ErrorController errorController =new ErrorController();
+        ErrorController errorController = new ErrorController();
         try {
             errorController.displayError("save");
         } catch (IOException e) {
@@ -38,7 +41,7 @@ public class SalesApplicationControl {
         }
     }
 
-    public void addNewItem(Product p){
+    public void addNewItem(Product p) throws SQLException {
         OrderDetail choice = OrderFactory.choiceItem(p, this.getView().getWindow());
         if(choice.getQuantity()>0){
             this.model.addItem(choice);

@@ -32,7 +32,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="447.0" layoutY="513.0" mnemonicParsing="false" styleClass="button-admin">
+      <Button layoutX="447.0" layoutY="513.0" mnemonicParsing="false" onAction="#changeSceneEditEvent" styleClass="button-admin">
          <graphic>
             <ImageView fitHeight="46.0" fitWidth="49.0" layoutX="-27.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" styleClass="button-admin">
                <image>
@@ -41,7 +41,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="644.0" layoutY="515.0" mnemonicParsing="false" styleClass="button-admin">
+      <Button layoutX="644.0" layoutY="515.0" mnemonicParsing="false" onAction="#changeSceneDeleteEvent" styleClass="button-admin">
          <graphic>
             <ImageView fitHeight="46.0" fitWidth="42.0" layoutY="-17.0" pickOnBounds="true" preserveRatio="true" styleClass="button-admin">
                <image>
