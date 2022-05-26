@@ -93,60 +93,60 @@ public class AdminProductController implements Initializable {
 //            dialog.close();
 //        }
 //        }
-//    public void changeSceneEditEvent(ActionEvent e) throws IOException, SQLException {
-//        FXMLLoader loader = new FXMLLoader();
-//        Product selected = productTableView.getSelectionModel().getSelectedItem();
-//        if (selected==null){
-//            loader.setLocation(this.getClass().getResource("../View/Alert.fxml"));
-//            Pane EditParentView = loader.load();
-//            Dialog<ButtonType> dialog = new Dialog<>();
-//            dialog.setDialogPane((DialogPane) EditParentView);
-//            dialog.showAndWait();
-//        }else{
-//            loader.setLocation(this.getClass().getResource("../View/Admin.Product.Edit.fxml"));
-//            Pane ProductEditViewParent = loader.load();
-//            AdminProductEditController adminProductEditController = loader.getController();
-//            adminProductEditController.handleEvent(selected);
-//            Dialog<ButtonType> dialog = new Dialog<>();
-//            dialog.setDialogPane((DialogPane) ProductEditViewParent);
-//            dialog.initStyle(StageStyle.TRANSPARENT);
-//            Optional<ButtonType> clickedButton = dialog.showAndWait();
-//            if(clickedButton.get() == ButtonType.APPLY){
-//                adminProductEditController.EditProduct(selected);
-//                productTableView.setItems(FXCollections.observableArrayList(productInTableList));
-//                productTableView.refresh();
-//            }else if(clickedButton.get()==ButtonType.CLOSE){
-//                dialog.close();
-//            }
-//        }
-//
-//    }
-//    public void changeSceneDeleteEvent(ActionEvent e) throws IOException, SQLException {
-//        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-//        FXMLLoader loader = new FXMLLoader();
-//        Product selected = productTableView.getSelectionModel().getSelectedItem();
-//        if(selected ==null){
-//            loader.setLocation(this.getClass().getResource("../View/Alert.fxml"));
-//            Pane CategoryEditParentView = loader.load();
-//            Dialog<ButtonType> dialog = new Dialog<>();
-//            dialog.setDialogPane((DialogPane) CategoryEditParentView);
-//            dialog.showAndWait();
-//        }else{
-//            loader.setLocation(this.getClass().getResource("../View/Admin.Delete.fxml"));
-//            Pane CategoryDeleteParentView = loader.load();
-//            Dialog<ButtonType> dialog = new Dialog<>();
-//            dialog.setDialogPane((DialogPane) CategoryDeleteParentView);
-//            Optional<ButtonType> ClickedButton = dialog.showAndWait();
-//            AdminDeleteController adminDeleteController = loader.getController();
-//            if(ClickedButton.get()==ButtonType.YES){
-//                adminDeleteController.DeleteProduct(selected);;
-//                productTableView.setItems(FXCollections.observableArrayList(productInTableList));
-//                productTableView.refresh();
-//            }
-//
-//        }
-//
-//    }
+    public void changeSceneEditEvent(ActionEvent e) throws IOException, SQLException {
+        FXMLLoader loader = new FXMLLoader();
+        Product selected = productTableView.getSelectionModel().getSelectedItem();
+        if (selected==null){
+            loader.setLocation(this.getClass().getResource("../View/Alert.fxml"));
+            Pane EditParentView = loader.load();
+            Dialog<ButtonType> dialog = new Dialog<>();
+            dialog.setDialogPane((DialogPane) EditParentView);
+            dialog.showAndWait();
+        }else{
+            loader.setLocation(this.getClass().getResource("../View/Admin.Product.Edit.fxml"));
+            Pane ProductEditViewParent = loader.load();
+            AdminProductEditController adminProductEditController = loader.getController();
+            adminProductEditController.handleEvent(selected);
+            Dialog<ButtonType> dialog = new Dialog<>();
+            dialog.setDialogPane((DialogPane) ProductEditViewParent);
+            dialog.initStyle(StageStyle.TRANSPARENT);
+            Optional<ButtonType> clickedButton = dialog.showAndWait();
+            if(clickedButton.get() == ButtonType.APPLY){
+                adminProductEditController.excuteCheck(selected);
+                productTableView.setItems(FXCollections.observableArrayList(productInTableList));
+                productTableView.refresh();
+            }else if(clickedButton.get()==ButtonType.CLOSE){
+                dialog.close();
+            }
+        }
+
+    }
+    public void changeSceneDeleteEvent(ActionEvent e) throws IOException, SQLException {
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader();
+        Product selected = productTableView.getSelectionModel().getSelectedItem();
+        if(selected ==null){
+            loader.setLocation(this.getClass().getResource("../View/Alert.fxml"));
+            Pane CategoryEditParentView = loader.load();
+            Dialog<ButtonType> dialog = new Dialog<>();
+            dialog.setDialogPane((DialogPane) CategoryEditParentView);
+            dialog.showAndWait();
+        }else{
+            loader.setLocation(this.getClass().getResource("../View/Admin.Delete.fxml"));
+            Pane CategoryDeleteParentView = loader.load();
+            Dialog<ButtonType> dialog = new Dialog<>();
+            dialog.setDialogPane((DialogPane) CategoryDeleteParentView);
+            Optional<ButtonType> ClickedButton = dialog.showAndWait();
+            AdminDeleteController adminDeleteController = loader.getController();
+            if(ClickedButton.get()==ButtonType.YES){
+                adminDeleteController.DeleteProduct(selected);;
+                productTableView.setItems(FXCollections.observableArrayList(productInTableList));
+                productTableView.refresh();
+            }
+
+        }
+
+    }
     public void SearchName(ActionEvent e) throws SQLException {
         this.GetDataProduct();
         List<Product> productArray = new ArrayList<>();

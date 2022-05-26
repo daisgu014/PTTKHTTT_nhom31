@@ -86,8 +86,6 @@ public class AdminImportBillOldProduct implements Initializable {
                 txtProductName.setText(o.getProductName());
                 lblCategory.setText(o.getCategoryName());
                 txtProductPrice.setText(String.valueOf(o.getProductPrice()));
-            }else{
-                System.out.println("iD ???");
             }
         }
 
@@ -112,7 +110,7 @@ public class AdminImportBillOldProduct implements Initializable {
                 pstm.setInt(3,Integer.parseInt(txtStorage.getText()));
                 pstm.execute();
 
-                adminProductController.GetDataProduct();
+                adminImportBillController.GetDataProduct();
             int OldStorage=0;
             for (Product product : adminProductController.productInTableList){
                     if(product.getProductId().equalsIgnoreCase(listProductID.getValue())){
@@ -129,7 +127,7 @@ public class AdminImportBillOldProduct implements Initializable {
          } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        adminProductController.GetDataProduct();
+        adminImportBillController.GetDataProduct();
 
     }
 

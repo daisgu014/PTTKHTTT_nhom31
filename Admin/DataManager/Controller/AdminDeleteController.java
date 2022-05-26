@@ -16,7 +16,6 @@ public class AdminDeleteController {
     }
     public void DeleteProduct (Product product) throws SQLException {
         dao = new DAO();
-        dao.execute("DELETE ProductPrice Where ProductID lIKE '"+product.getProductId()+"'");
         dao.execute("DELETE Product Where ProductID LIKE '"+product.getProductId()+"'");
         AdminProductController adminProductController = new AdminProductController();
         adminProductController.GetDataProduct();
