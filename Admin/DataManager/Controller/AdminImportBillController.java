@@ -47,7 +47,7 @@ public class AdminImportBillController implements Initializable {
     public static List<Product> productInTableList = new ArrayList<>();
 
 
-    public void GetDataProduct() throws SQLException {
+    public void  GetDataProduct() throws SQLException {
         productInTableList.clear();
         DAO dao = new DAO();
         ResultSet rs = dao.executeQuery("SELECT ProductID,ProductName,CategoryName,ProductPrice,Storage\n" +
@@ -62,6 +62,51 @@ public class AdminImportBillController implements Initializable {
             Product product = new Product(productId,productName,productCategory,productPrice,storage);
             productInTableList.add(product);
         }
+    }
+    public void changeSceneImportBillOldProduct(ActionEvent e) throws IOException, SQLException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("../View/Admin.ImportBill.OldProduct.fxml"));
+        Pane ImportBillOldProductView = loader.load();
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.initStyle(StageStyle.TRANSPARENT);
+        dialog.setDialogPane((DialogPane) ImportBillOldProductView);
+        AdminImportBillOldProduct adminImportBillOldProduct=loader.getController();
+        adminImportBillOldProduct.handleEvent();
+        Optional<ButtonType> ClickedButton = dialog.showAndWait();
+        if (ClickedButton.get() == ButtonType.APPLY) {
+            adminImportBillOldProduct.Save();
+            productTableView.setItems(FXCollections.observableArrayList(productInTableList));
+            productTableView.refresh();
+        } else if (ClickedButton.get() == ButtonType.CLOSE) {
+            dialog.close();
+        }
+    }
+    public void changeSceneImportBillNewProduct(ActionEvent e) throws IOException, SQLException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("../View/Admin.ImportBill.NewProduct.fxml"));
+        Pane ImportBillNewProductView = loader.load();
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.initStyle(StageStyle.TRANSPARENT);
+        dialog.setDialogPane((DialogPane) ImportBillNewProductView);
+        Optional<ButtonType> ClickedButton = dialog.showAndWait();
+        AdminImportBillNewProduct adminImportBillNewProduct = loader.getController();
+        if (ClickedButton.get() == ButtonType.APPLY) {
+            adminImportBillNewProduct.execute();
+            productTableView.setItems(FXCollections.observableArrayList(productInTableList));
+            productTableView.refresh();
+
+        } else if (ClickedButton.get() == ButtonType.CLOSE) {
+            dialog.close();
+        }
+    }
+    public void changeScenceImportBill(ActionEvent e) throws IOException {
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        stage.centerOnScreen();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../View/AdminImportBill.fxml"));
+        Parent ProductViewParent = loader.load();
+        Scene scene = new Scene(ProductViewParent);
+        stage.setScene(scene);
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -108,51 +153,7 @@ public class AdminImportBillController implements Initializable {
             }
         });
     }
-    public void changeSceneImportBillOldProduct(ActionEvent e) throws IOException, SQLException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("../View/Admin.ImportBill.OldProduct.fxml"));
-        Pane ImportBillOldProductView = loader.load();
-        Dialog<ButtonType> dialog = new Dialog<>();
-        dialog.initStyle(StageStyle.TRANSPARENT);
-        dialog.setDialogPane((DialogPane) ImportBillOldProductView);
-        AdminImportBillOldProduct adminImportBillOldProduct=loader.getController();
-        adminImportBillOldProduct.handleEvent();
-        Optional<ButtonType> ClickedButton = dialog.showAndWait();
-        if (ClickedButton.get() == ButtonType.APPLY) {
-            adminImportBillOldProduct.Save();
-            productTableView.setItems(productInTables);
-            productTableView.refresh();
-        } else if (ClickedButton.get() == ButtonType.CLOSE) {
-            dialog.close();
-        }
-    }
-    public void changeSceneImportBillNewProduct(ActionEvent e) throws IOException, SQLException {
 
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("../View/Admin.ImportBill.NewProduct.fxml"));
-        Pane ImportBillNewProductView = loader.load();
-        Dialog<ButtonType> dialog = new Dialog<>();
-        dialog.initStyle(StageStyle.TRANSPARENT);
-        dialog.setDialogPane((DialogPane) ImportBillNewProductView);
-        dialog.showAndWait();
-//        Optional<ButtonType> ClickedButton = dialog.showAndWait();
-//        AdminProductAddController AddController = loader.getController();
-//        if (ClickedButton.get() == ButtonType.APPLY) {
-//            AddController.excuteCheck();
-//
-//        } else if (ClickedButton.get() == ButtonType.CLOSE) {
-//            dialog.close();
-//        }
-    }
-    public void changeScenceImportBill(ActionEvent e) throws IOException {
-        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        stage.centerOnScreen();
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/AdminImportBill.fxml"));
-        Parent ProductViewParent = loader.load();
-        Scene scene = new Scene(ProductViewParent);
-        stage.setScene(scene);
-    }
     public void GoBack(ActionEvent e) throws IOException {
         Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
 //        FXMLLoader loader = new FXMLLoader();

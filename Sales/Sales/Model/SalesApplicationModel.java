@@ -1,12 +1,14 @@
 package Main.Sales.Sales.Model;
 
 import Main.Admin.DataManager.Controller.AdminProductController;
+import Main.Admin.DataManager.Controller.ErrorController;
 import Main.Entity.DataAccess.DAO;
 import Main.Entity.Element.Order;
 import Main.Entity.Element.OrderDetail;
 import Main.Entity.Element.Product;
 import Main.MainApp;
 
+import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -85,17 +87,37 @@ public class    SalesApplicationModel {
 
     }
 
-    public void addItem(OrderDetail od){
+    public void addItem(OrderDetail od) throws SQLException {
+        ErrorController errorController = new ErrorController();
         boolean flag = false;
         for(OrderDetail orderDetail : currentChoices){
             if(orderDetail.getProductChoice().getProductId().equals(od.getProductChoice().getProductId())){
                 orderDetail.setQuantity(orderDetail.getQuantity()+od.getQuantity());
                 orderDetail.setPrice(orderDetail.getPrice()+od.getPrice());
+                if(!checkQuantity(orderDetail)){
+                    try {
+                        errorController.displayError("quantity");
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+
+                    }
+                    orderDetail.setQuantity(orderDetail.getQuantity()-od.getQuantity());
+                    orderDetail.setPrice(orderDetail.getPrice()-od.getPrice());
+                }
                 flag=true;
             }
         }
         if(!flag) {
-            this.currentChoices.add(od);
+            if(checkQuantity(od)){
+                this.currentChoices.add(od);
+            }else{
+                try {
+                    errorController.displayError("quantity");
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
         }
     }
 
@@ -108,8 +130,22 @@ public class    SalesApplicationModel {
         save();
         createNewOrder();
     }
-
+    public boolean checkQuantity(OrderDetail od) throws SQLException {
+        AdminProductController adminProductController = new AdminProductController();
+        adminProductController.GetDataProduct();
+        for (Product product:adminProductController.productInTableList){
+            if(product.getProductId().equalsIgnoreCase(od.getProductChoice().getProductId())){
+                if(product.getStorage()<od.getQuantity()){
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
     private void save(){
+        ErrorController errorController = new ErrorController();
         PreparedStatement pstm;
         try {
            pstm = dao.getPrepareStatement(
@@ -131,9 +167,9 @@ public class    SalesApplicationModel {
                pstm.setString(2,od.getProductChoice().getProductId());
                pstm.setInt(3,od.getQuantity());
                pstm.execute();
-           dao.execute("UPDATE Product SET Storage=Storage-"+od.getQuantity()+ " Where ProductID like '"+od.getProductChoice().getProductId()+"'");
-
+                dao.execute("UPDATE Product SET Storage=Storage-"+od.getQuantity()+ " Where ProductID like '"+od.getProductChoice().getProductId()+"'");
            }
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
