@@ -187,7 +187,7 @@ public class ReportEndDay extends SceneController implements Initializable {
         if(check == false) {
             valueTotalProduct = "0";
         }
-        totalProduct.setText(valueTotalProduct);
+        totalProduct.setText(String.format(valueTotalProduct));
         nameEmp.setText(MainApp.staff.getEmployeeName());
     }
 }
