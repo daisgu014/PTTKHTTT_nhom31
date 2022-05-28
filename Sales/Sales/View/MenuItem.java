@@ -74,7 +74,7 @@ public class MenuItem extends VBox {
 //        for(ProductPrice pp : product.getPriceList()){
 //            price += String.format("%2s %6s\n",pp.getSize(),pp.getPrice());
 //        }
-        Label priceLbl = new Label(String.valueOf(product.getProductPrice())+" VNĐ");
+        Label priceLbl = new Label(String.format("%,d",product.getProductPrice())+" VNĐ");
 //        HBox content = new HBox(image);
 //        content.setSpacing(5);
         priceLbl.setStyle(pricelabelCSS);

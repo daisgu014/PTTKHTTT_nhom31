@@ -190,13 +190,20 @@ alter table ImportBillDetails add constraint FK_ImportBillDetails_ImportBill for
 INSERT INTO dbo.WorkType(WorkTypeName) VALUES ('Parttime'), ('Fulltime');
 -- Thêm dữ liệu cho bảng WorkPosition
 INSERT INTO dbo.WorkPosition(WorkPositionName, WorkPositionLVL) VALUES ('Manager',2), ('Sale',1);
+--Thêm dữ liệu cho bảng PositionType
+INSERT INTO PositionType (WorkPositionID,WorkTypeID,SalaryPerHour) VALUES ('WP001','WT002',50000), ('WP002','WT001',25000), ('WP002','WT002',30000);
+--Thêm dữ liệu vào bảng Employee
+INSERT INTO Employee (EmployeeName,EmployeePhone,WorkPositionID,WorkTypeID) VALUES (N'Nguyễn Hữu Đại','0969997542','WP001','WT002'), 
+																				(N'Nguyễn Hoàng Gia Đại','098768751','WP002','WT002'),
+																				(N'Đặng Huỳnh Như Y','098762751','WP002','WT001');
 
-INSERT INTO PositionType (WorkPositionID,WorkTypeID,SalaryPerHour) VALUES ('WP001','WT002',50000), ('WP002','WT001',25000), ('WP002','WT002',30000)
-
+--Thêm tài khoản cho nhân viên
+INSERT INTO Account (EmployeeID,AccountUsername,AccountPassword) VALUES ('EMP0001','daisgu014','123456'),
+																		('EMP0002','daisgu013','123456'),
+																		('EMP0003','ysgu123','123456');
 --Thêm thể loại máy ảnh cho bảng Category
 insert into Category(CategoryName) values ('Canon'), ('Fujifilm'), ('Nikon'), ('Pentax'), ('Sony');
 
-Select * FROM Category
 --Thêm máy ảnh cho bảng 
 insert into Product(ProductName, ProductPrice, Storage, CategoryID) values
 ('Canon EOS 700D', 11990000,10, 'CAT001'),
@@ -227,12 +234,16 @@ insert into Product(ProductName, ProductPrice, Storage, CategoryID) values
 ('Sony DSC HX350 ', 7900000,10, 'CAT005'),
 ('Sony CYBERSHOT DSC-HX350 ', 8390000,10, 'CAT005'),
 ('sony HX350 ', 8000000, 10,'CAT005'),
-('Sony HX99 ', 10900000, 10,'CAT005')
+('Sony HX99 ', 10900000, 10,'CAT005');
+
+--Thêm phiếu nhập
+INSERT INTO ImportBill (CreateDate) VALUES ('2022-05-28');
 
 
-SELECT Product.ProductName, Category.CategoryName, ImportBillDetails.Quantity
-FROM ImportBill, ImportBillDetails, Product, Category
-Where ImportBill.ImportBillID=ImportBillDetails.ImportBillID
-AND ImportBill.ImportBillID='IB001'
-AND ImportBillDetails.ProductID=Product.ProductID
-AND Product.CategoryId=Category.CategoryID
+--Thêm chi tiếu phiếu nhập
+INSERT INTO ImportBillDetails (ImportBillID,ProductID,Quantity) VALUES ('IB001','PD0002',10);
+
+--Thêm hoá đơn
+INSERT INTO Orders (TotalPrice, OrderDate, OrderTime, EmployeeID) VALUES (12990000,'2022-05-28','11:00:00','EMP0001') 
+--Thêm chi tiết
+INSERT INTO OrderDetails (OrderID, ProductID, Quantity) VALUES ('OD0001','PD0006',1)
