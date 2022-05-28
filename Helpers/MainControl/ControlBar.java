@@ -91,9 +91,11 @@ public class ControlBar extends VBox {
             throw new RuntimeException(e);
         }
 
-
-
         ToggleGroup gr = new ToggleGroup();
+        gr.selectedToggleProperty().addListener((obsVal, oldVal, newVal) -> {
+            if (newVal == null)
+                oldVal.setSelected(true);
+        });
         saleBtn.setToggleGroup(gr);
         EoDsBtn.setToggleGroup(gr);
         dataBtn.setToggleGroup(gr);
